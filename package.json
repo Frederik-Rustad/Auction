@@ -7,7 +7,9 @@
     "build": "sass src/scss:dist/css",
     "watch": "sass src/scss:dist/css --watch",
     "start": "live-server",
-    "dev": "npm-run-all --parallel watch start"
+    "dev": "npm-run-all --parallel watch start",
+    "sass": "sass src/scss/main.scss public/css/style.css",
+    "sass:watch": "npm run sass -- --watch"
   },
   "keywords": [],
   "author": "Frederik Rustad",
@@ -18,6 +20,6 @@
     "sass": "^1.70.0"
   },
   "dependencies": {
-    "bootstrap": "^5.2.0"
+    "bootstrap": "^5.3.2"
   }
 }
