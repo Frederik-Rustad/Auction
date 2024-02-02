@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="dist/css/main.css">
-  <title>Home | Auction </title>
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+ <link rel="icon" href="assets/img/favicon-32x32.png" sizes="32x32" type="image/png">
+ <link rel="icon" href="assets/img/favicon-16x16.png" sizes="16x16" type="image/png">
+
+  <title>login | Auction </title>
 </head>
 <body>
- <div class="container">
+ <!-- <div class="container">
   <h1 class="text-center">Welcome to the auction📜</h1>
 </div>
 
@@ -27,6 +31,101 @@
     <div class="col-md-4 bg-info text-white">Item 5</div>
     <div class="col-md-4 bg-dark text-white">Item 6</div>
   </div>
+</div> -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+
+      <h2 class="mb-4">Welcome to Auction-Hub</h2>
+      <img src="assets/img/welcome_to_aution-hub.png" alt="login_mascot" class="img-fluid">
+
+      <!-- Button to trigger the modal -->
+      <button type="button" class="btn btn-primary btn-login" data-bs-toggle="modal" data-bs-target="#loginModal">
+        Login
+      </button>
+
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerModal">
+        Register
+      </button>
+
+      <!-- Login Modal -->
+      <div class="modal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="loginModalLabel">Login</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="assets/img/login_mascot.png" alt="login" class="img-fluid">
+              <!-- Login Form -->
+              <form>
+                <!-- Include your login form fields here -->
+                <div class="mb-3">
+                  <label for="loginEmail" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" pattern="[\w\-.]+@(stud.)?noroff.no$" required>
+                  <div class="invalid-feedback">
+                    Please enter a valid email address with the correct domain.
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="loginPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerModal">
+                  Register
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Register Modal -->
+      <div class="modal" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="registerModalLabel">Register</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="assets/img/register_mascot.png" alt="login" class="img-fluid">
+              <!-- Register Form -->
+              <form id="registerForm">
+                <div class="mb-3">
+                  <label for="registerName" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="registerName" name="name" placeholder="Username" required>
+                </div>
+                <div class="mb-3">
+                  <label for="registerEmail" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="registerEmail" name="email" placeholder="name@stud.noroff.no" pattern="[\w\-.]+@(stud\.)?noroff\.no$" required>
+                  <div class="invalid-feedback">
+                    Please enter a valid email address with the correct domain.
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="registerPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="registerPassword" name="password" placeholder="Password" minlength="8" required>
+                </div>
+                <div class="mb-3">
+                  <label for="registerAvatar" class="form-label">Avatar (Optional)</label>
+                  <input type="url" class="form-control" id="registerAvatar" name="avatar" placeholder="https://img.service.com/avatar.jpg">
+                </div>
+                <button type="submit" class="btn btn-success">Register</button>
+                <button type="button" class="btn btn-primary btn-login" data-bs-toggle="modal" data-bs-target="#loginModal">
+                  Login
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

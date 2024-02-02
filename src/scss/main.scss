@@ -1,6 +1,9 @@
 @import "variables.scss";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-h1 {
+h2 {
   color: $heading-color;
+}
+.btn-login {
+  background-color: $auction-primary-color;
 }
