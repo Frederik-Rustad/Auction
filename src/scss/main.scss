@@ -15,6 +15,9 @@ p, a {
 .btn-login, .btn-auction, .bg-card {
   background-color: $auction-primary-color;
 }
+.btn-secondary {
+  background-color: $beta;
+}
 .modal-header, .navbar-auction {
   background-color: $primary;
 }

@@ -6,9 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../dist/css/main.css">
-  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="../assets/img/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="../assets/img/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="../assets/img/auction-hub.png" type="image/png">
   <title>Listings | Auction</title>
 </head>
 
@@ -16,11 +14,11 @@
   <nav class="navbar navbar-auction">
     <div class="container">  
       <a class="navbar-brand" href="../index.html">
-        <img src="../assets/img/auction-hub.png" alt="Logo" height="30" class="d-inline-block align-top">
+        <img src="../assets/img/auction-hub.png" alt="Logo" height="50" class="d-inline-block align-top">
       </a>  
       <div class="d-flex flex-row align-items-center ">       
            <a class="nav-link text-white margin-left m-2 fw-bold text-stroke" href="index.html">Listings</a>       
-            <button class="btn border-white text-white fw-bold text-stroke" id="logout-btn">Logout</button>
+            <button class="btn btn-primary btn-auction border-white text-white fw-bold text-stroke" id="logout-btn">Logout</button>
         <div class="profile-circle">
           <img src="../assets/img/auction-default-profile.jpg" alt="profile picture">
         </div>
@@ -31,12 +29,12 @@
   <div class="container pt-4 ">
     <div class="col-md-12 bg-card text-center mb-4 rounded-4">
       <h1 class="text-center text-white fw-bold text-stroke">Welcome to the auctions📜</h1>
-      <p class=" text-center mx-4  ">"Welcome to our Auction Hub! Explore and bid on a diverse range of items in our active auctions. Discover unique treasures, exciting gadgets, and much more. Browse through our collection and find the perfect item to elevate your experience. Join the bidding excitement and secure your favorite items today!"</p>
+      <p class=" text-center mx-4 fw-bold  ">"Welcome to Auction-Hub! Explore and bid on a diverse range of items in our active auctions. Discover unique treasures, exciting gadgets, and much more. Browse through our collection and find the perfect item to elevate your experience. Join the bidding excitement and secure your favorite items today!"</p>
         <img src="../assets/img/android-chrome-192x192.png" alt="auction-hub mascot">
     </div>
   </div>
 
-  <div class="container bg-card text-white rounded mb-4 col-10">
+  <div class="container bg-card text-black rounded mb-4 col-10">
     <h2>
       <a data-bs-toggle="collapse" href="#postForm" role="button" aria-expanded="false" aria-controls="postForm" class="text-white text-decoration-none fw-bold text-stroke"><h3>📜 Create an Auction +</h3></a>
     </h2>
@@ -44,21 +42,21 @@
       <form>
         <div class="mb-3">
           <label for="postTitle" class="form-label">Title</label>
-          <input type="text" class="form-control text-white" id="postTitle" name="postTitle" required>
+          <input type="text" class="form-control " id="postTitle" name="postTitle" required>
         </div>
         <div class="mb-3">
           <label for="postText" class="form-label">Auction Description</label>
-          <textarea class="form-control  text-white" id="postText" name="postText" rows="4"></textarea>
+          <textarea class="form-control " id="postText" name="postText" rows="4"></textarea>
         </div>
         <div class="mb-3">
           <label for="deadlineDate" class="form-label">Deadline Date</label>
-          <input type="date" class="form-control text-white" id="deadlineDate" name="deadlineDate" required>
+          <input type="date" class="form-control" id="deadlineDate" name="deadlineDate" required>
         </div>
         <div class="mb-3">
           <label for="postImage" class="form-label">Upload Image</label>
-          <input type="file" class="form-control text-white" id="postImage" name="postImage">
+          <input type="file" class="form-control" id="postImage" name="postImage">
         </div>
-        <button type="submit" class="btn btn-auction mb-2 text-white border-white">Post</button>
+        <button type="submit" class="btn btn-auction mb-2 fw-bold text-stroke text-white border-white">Post</button>
       </form>
     </div>
   </div>
@@ -69,8 +67,8 @@
       <div class="col-md-6">
         <!-- Filter options -->
         <div class="input-group mb-3">
-          <label class="input-group-text" for="auctionFilter">Filter:</label>
-          <select class="form-select" id="auctionFilter">
+          <label class="input-group-text fw-bold" for="auctionFilter">Filter:</label>
+          <select class="form-select  fw-bold" id="auctionFilter">
             <option value="newest">Newest</option>
             <option value="endingSoon">Ending Soon</option>
             <option value="mostBids">Most Bids</option>
@@ -82,7 +80,7 @@
       <div class="col-md-6">
         <!-- Search bar and button -->
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Search auctions" aria-label="Search auctions" aria-describedby="searchButton">
+          <input type="text" class="form-control  fw-bold" placeholder="Search auctions" aria-label="Search auctions" aria-describedby="searchButton">
           <button class="btn btn-primary btn-auction text-white fw-bold text-stroke" type="button" id="searchButton">Search</button>
         </div>
       </div>
@@ -94,7 +92,7 @@
       <div class="card" style="width: 18rem;">
         <img src="../assets/img/auction_items_placeholder/H7byTJ5Pt-sas2Mq2R7yT.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
+          <h5 class="card-title fw-bold">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>
         </div>
@@ -102,7 +100,7 @@
       <div class="card" style="width: 18rem;">
         <img src="../assets/img/auction_items_placeholder/WUKoAJzEH-QLYRn7E9uDY.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
+          <h5 class="card-title fw-bold">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>
         </div>
@@ -110,7 +108,7 @@
       <div class="card" style="width: 18rem;">
         <img src="../assets/img/auction_items_placeholder/YqvsIkrqWcpZM531F-gtY.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
+          <h5 class="card-title fw-bold">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>
         </div>
@@ -119,35 +117,35 @@
       <div class="card" style="width: 18rem;">
         <img src="../assets/img/auction_items_placeholder/2haH8YkLSxKJ-iFqe3D6y.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
+          <h5 class="card-title fw-bold">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>
         </div>
       </div><div class="card" style="width: 18rem;">
         <img src="../assets/img/auction_items_placeholder/br ba on X.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
+          <h5 class="card-title fw-bold">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>
         </div>
       </div><div class="card" style="width: 18rem;">
         <img src="../assets/img/auction_items_placeholder/H7byTJ5Pt-sas2Mq2R7yT.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
+          <h5 class="card-title fw-bold">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>
         </div>
       </div><div class="card" style="width: 18rem;">
         <img src="../assets/img/auction_items_placeholder/WUKoAJzEH-QLYRn7E9uDY.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
+          <h5 class="card-title fw-bold">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>
         </div>
       </div><div class="card" style="width: 18rem;">
         <img src="../assets/img/auction_items_placeholder/YqvsIkrqWcpZM531F-gtY.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
+          <h5 class="card-title fw-bold">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>
         </div>
