@@ -12,6 +12,10 @@ h3 {
 p, a {
   font-weight: 600;
 }
+.logo {
+  max-width: 400px;
+  height: auto;
+}
 .btn-login, .btn-auction, .bg-card {
   background-color: $auction-primary-color;
 }
@@ -48,8 +52,30 @@ p, a {
   z-index: 1; 
 }
 
-
-
 .text-stroke {
   text-shadow: $text-stroke;
+}
+
+.custom-shape-divider-bottom-1707191989 {
+  position: absolute;
+ 
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1707191989 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 101px;
+}
+
+.custom-shape-divider-bottom-1707191989 .shape-fill {
+  fill: #00D0FF;
+}
+main {
+  margin-bottom: 120px; /* Adjust as needed based on the height of your footer */
 }
