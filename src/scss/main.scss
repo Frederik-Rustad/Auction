@@ -30,8 +30,8 @@ p, a {
 }
 .profile-circle {
   display: flex;
-  max-width: 40px;
-  max-height: 40px;
+  max-width: 50px;
+  max-height: 50px;
   border-radius: 50%;
   position: relative;  
   margin-left: 10px;
@@ -46,8 +46,8 @@ p, a {
 .profile-frame {
   width: 120%;
   position: absolute;
-  top: 48%;
-  left: 48%;
+  top: 44%;
+  left: 50%;
   transform: translate(-50%, -50%); /* Center the frame within the circle */ 
   z-index: 1; 
 }
@@ -57,8 +57,7 @@ p, a {
 }
 
 .custom-shape-divider-bottom-1707191989 {
-  position: absolute;
- 
+  position: absolute; 
   left: 0;
   width: 100%;
   overflow: hidden;
@@ -77,5 +76,13 @@ p, a {
   fill: #00D0FF;
 }
 main {
-  margin-bottom: 120px; /* Adjust as needed based on the height of your footer */
+  margin-bottom: 120px; 
+}
+
+.auction-item {
+ max-width: 350px;
+ 
+}
+.border-grey {
+  border: solid 5px black;
 }
