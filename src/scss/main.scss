@@ -82,3 +82,9 @@ main {
 .border-grey {
   border: solid 5px black;
 }
+.bid-img {
+  display: flex;
+  justify-self: end;
+  max-width: 250px;
+  height: auto;
+}
