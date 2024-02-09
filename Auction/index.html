@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../dist/css/main.css">
   <link rel="icon" href="../assets/img/auction-hub.png" type="image/png">
-  <title>Listings | Auction</title>
+  <title>Auction | Auction-Hub</title>
 </head>
 
 <body>
@@ -28,41 +28,68 @@
     </div>
   </nav>
 
-  <div class="container mt-4 ">
+  <div class="container-md mt-4">
     <div class="card col-md-12 rounded-4">
       <div class="col-12 bg-card rounded-top-4">
         <h2 class="text-white text-stroke ms-2">Auction title</h2>
       </div>
-      <div class="container">
-        <div class="column">
-          <div class="col-md-4">
-            <img src="../assets/img/auction_items_placeholder/WUKoAJzEH-QLYRn7E9uDY.png" alt="auction item"
-              class="rounded-4 auction-item m-4 ">
-            <div>
-              <h4>Seller Username</h4>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus aliquam placeat impedit itaque,
-                possimus voluptates voluptatem ut dignissimos veritatis, laboriosam, id eaque illum repudiandae eius
-                explicabo quaerat porro quod aliquid.</p>
-            </div>
-          </div>
-        </div>
-      <div class="container">
-        <div class="col-md-8 mt-4 border p-0 rounded-4 border-grey ">
-          <h3 class="text-white text-stroke bg-card rounded-top">Bids</h3>
-        </div>
+      <div class="container mb-2">
         <div class="container">
           <div class="row">
+            <!-- col-md-4 -->
             <div class="col-md-4">
+              <img src="../assets/img/auction_items_placeholder/WUKoAJzEH-QLYRn7E9uDY.png" alt="auction item"
+                class="rounded-4 auction-item mt-4 img-fluid">
+              <div>
+                <h4>Seller Username</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus aliquam placeat impedit
+                  itaque,
+                  possimus voluptates voluptatem ut dignissimos veritatis, laboriosam, id eaque illum repudiandae eius
+                  explicabo quaerat porro quod aliquid.</p>
+              </div>
             </div>
-            <div class="col-md-8 mt-4 border p-0 rounded-4 border-grey ">
-              <h3 class="text-white text-stroke bg-card rounded-top">place bid</h3>
+
+            <!-- Bids -->
+            <div class="col-md-8">
+              <div class="col-md-12 border rounded-4 border-grey mt-4 p-0">
+                <h3 class="text-white text-stroke bg-card rounded-top">Bids</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum et sint ducimus commodi tempore fuga
+                  facilis ea iste magnam. Minus voluptas nesciunt omnis quas, eveniet est tempora officiis vitae
+                  consectetur?</p>
+              </div>
+
+              <div class="col-md-12 border rounded-4 border-grey mt-4 p-0">
+                <div class="container mt-4">
+                  <form class="row g-3">
+                    <div class="col-md-6">
+                      <label for="bidAmount" class="form-label">Set bid amount</label>
+                      <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="number" class="form-control" id="bidAmount" name="bidAmount"
+                          placeholder="Enter bid amount" required>
+                      </div>
+                      <a href="#">Register and login to bid</a>
+                    </div>
+                    <div class="col-md-6">
+                      <button type="submit" class="btn btn-secondary fw-bold text-stroke mt-4">Place Bid</button>
+                    </div>
+                  </form>
+                  <p>Bidding closes on : mm/dd/yyyy</p>
+                    <div class="d-flex align-items-center mb-2">
+                    <img src="../assets/img/Profile_frame_1_2.png" class="profile-circle" alt="user">
+                    <h5>Available Credits: xxx$</h5>
+                    </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-
-        <script defer src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script defer src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 <footer>
   <div class="custom-shape-divider-bottom-1707191989">
