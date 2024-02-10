@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../dist/css/main.css">
   <link rel="icon" href="../assets/img/auction-hub.png" type="image/png">
-  <title>Auction | Auction-Hub</title>
+  <title>Profile | Auction-Hub</title>
 </head>
 
 <body>
@@ -21,10 +21,8 @@
         <button class="btn btn-primary btn-auction border-white text-white fw-bold text-stroke"
           id="logout-btn">Logout</button>
         <div class="profile-circle">
-          <a href="../profile/index.html">
           <img src="../assets/img/auction-default-profile.jpg" alt="profile picture" class="profile-image">
           <img src="../assets/img/Profile_frame_1_2.png" alt="Profile frame" class="profile-frame">
-        </a>
         </div>
       </div>
     </div>
@@ -33,62 +31,55 @@
   <div class="container-md mt-4">
     <div class="card col-md-12 rounded-4">
       <div class="col-12 bg-card rounded-top-4">
-        <h2 class="text-white text-stroke ms-2">Auction title</h2>
+        <h2 class="text-white text-stroke ms-2">Username</h2>
       </div>
       <div class="container mb-2">
         <div class="container">
           <div class="row">
             <!-- col-md-4 -->
             <div class="col-md-4">
-              <img src="../assets/img/auction_items_placeholder/WUKoAJzEH-QLYRn7E9uDY.png" alt="auction item"
-                class="rounded-4 auction-item mt-4 img-fluid">
-              <div>
-                <h4>Seller Username</h4>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus aliquam placeat impedit
-                  itaque,
-                  possimus voluptates voluptatem ut dignissimos veritatis, laboriosam, id eaque illum repudiandae eius
-                  explicabo quaerat porro quod aliquid.</p>
+              <img src="../assets/img/Profile_frame_2.png" alt="Profile frame" class="rounded-4 auction-item mt-4 img-fluid">
+              <div>                
+                <p class="mt-2">short bio description she/her<br>
+                  language: English, Spanish
+                  collects: rare shoes/boots
+                  likes: sweet candy and cake</p>
               </div>
             </div>
 
-            <!-- Bids -->
+            <!-- active auctions -->
             <div class="col-md-8">
               <div class="col-md-12 border rounded-4 border-grey mt-4 p-0">
-                <h3 class="text-white text-stroke bg-card rounded-top">Bids</h3>
-                <p>username: bid xxx$</p>
-                <p>username: bid xxx$</p>
-                <p>username: bid xxx$</p>
+                <h3 class="text-white text-stroke bg-card rounded-top">Users Active Auctions</h3>
+                
+                <div class="border d-flex justify-content-evenly">
+                  <h4>Auction Title</h4>
+                  <p>short auction description ...</p> <a href="#"
+                    class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>                
+                </div>
+                <div class="border d-flex justify-content-evenly">
+                  <h4>Auction Title</h4>
+                  <p>short auction description ...</p> <a href="#"
+                    class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>                
+                </div><div class="border d-flex justify-content-evenly">
+                  <h4>Auction Title</h4>
+                  <p>short auction description ...</p> <a href="#"
+                    class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>                
+                </div>
               </div>
 
               <div class="col-md-12 border rounded-4 border-grey mt-4 p-0">
 
                 <div class="container mt-4">
-
-                  <form class="row g-3">
-                    <div class="col-md-12">
-                      <label for="bidAmount" class="form-label">Set bid amount</label>
-                      <div class="input-group">
-                        <span class="input-group-text">$</span>
-                        <input type="number" class="form-control" id="bidAmount" name="bidAmount"
-                          placeholder="Enter bid amount" required>
-                      </div>
-                      <button type="submit" class="btn btn-secondary fw-bold text-stroke mt-4">Place Bid</button>
-                    </div>
-                  </form>
-                  <div class="col-md-12 d-flex">
-                  <div class="col-md-6 d-flex flex-column justify-content-evenly">
-                    <p>Bidding closes on: mm/dd/yyyy</p>
+                 
                     <div class="d-flex justify-content-center align-items-center">
                       <div class="profile-circle m-2">
-                        <img src="../assets/img/auction-default-profile.jpg" alt="profile picture" class="profile-image">
-                        <img src="../assets/img/Profile_frame_1_2.png" alt="Profile frame" class="profile-frame">
+                        <img src="../assets/img/Credit_auction.png" alt="credits icon" class="profile-image">                        
                       </div>
-                    <h5>Available Credits: xxx$</h5>
+                    <h3 class="text-black">Available Credits: xxx$</h3>
                   </div>
                   </div>
-                  <div class="col-md-6">
-                    <img src="../assets/img/Bid_auction.png" alt="place bid" class="img-fluid bid-img">
-                  </div>
+                  
                 </div>
 
                 </div>
