@@ -1,6 +1,17 @@
 @import "variables.scss";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+html{
+  height: 100%;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+footer {
+  margin-top: auto;  
+  }
 h2 {
   color: $heading-color;
   font-weight: 700;
@@ -87,7 +98,4 @@ main {
   justify-self: end;
   max-width: 250px;
   height: auto;
-}
-.custom-shape-divider-bottom-1707191989 {
- 
 }
