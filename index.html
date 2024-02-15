@@ -17,7 +17,7 @@
       </a>  
       <div class="d-flex flex-row align-items-center ">       
            <a class="nav-link text-white margin-left m-2 fw-bold text-stroke" href="listings/index.html">Listings</a>       
-            <button class="btn btn-primary btn-auction text-white fw-bold text-stroke" id="logout-btn">Logout</button>            
+            <button class="btn btn-primary btn-auction text-white fw-bold text-stroke d-none" id="logout-btn">Logout</button>            
             <div class="profile-circle">
               <a href="../profile/index.html">
               <img src="../assets/img/auction-default-profile.jpg" alt="profile picture" class="profile-image">
@@ -56,7 +56,7 @@
             <div class="modal-body">
               <img src="assets/img/login_mascot.png" alt="login" class="img-fluid">
               <!-- Login Form -->
-              <form>
+              <form id="loginForm">
                 <div class="mb-3">
                   <label for="loginEmail" class="form-label">Email address</label>
                   <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" pattern="[\w\-.]+@(stud.)?noroff.no$" required>
@@ -107,7 +107,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="registerAvatar" class="form-label">Avatar url (Optional)</label>
-                  <input type="url" class="form-control" id="registerAvatar" name="avatar" placeholder="https://img.service.com/avatar.jpg">
+                  <input type="url" class="form-control" id="registerAvatar" name="avatar" placeholder="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg">
                 </div>
                 <button type="submit" class="btn btn-success btn-secondary fw-bold text-stroke">Register</button>
                 <button type="button" class="btn btn-primary btn-login fw-bold text-stroke" data-bs-toggle="modal" data-bs-target="#loginModal">
@@ -124,6 +124,7 @@
 </div>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="src/js/api/auth/register.js" type="module" defer></script>
+<script src="src/js/api/auth/login.js" type="module" defer></script>
 </body>
 <footer>
   <div class="custom-shape-divider-bottom-1707191989">
