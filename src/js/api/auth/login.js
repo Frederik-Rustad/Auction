@@ -1,5 +1,6 @@
-const BASE_URL = 'https://v2.api.noroff.dev/';
-const LOGIN_ENDPOINT = 'auth/login';
+import { BASE_URL, LOGIN_ENDPOINT } from '../apibase.js';
+import { logout } from './logout.js';
+
 
 document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('loginForm').addEventListener('submit', function (event) {
@@ -26,31 +27,17 @@ document.addEventListener('DOMContentLoaded', function () {
           throw new Error('Unexpected status code: ' + response.status);
         }
       })
-      .then(data => {
-        // Save the accessToken in local storage
+      .then(data => {       
         localStorage.setItem('accessToken', data.data.accessToken);
-
+        localStorage.setItem('userName', data.data.name);
         alert('Login successful!');
         console.log('User profile:', data);
         window.location.href = 'listings/index.html';
       })
       .catch(error => {
-        // Handle error
-        console.error('Error during login:', error.message);
-        alert('Login failed. Please check your credentials and try again.');
+        alert(`Login failed. Please check your credentials and try again.${error.message}`);
       });
   });
 });
 
-const accessToken = localStorage.getItem('accessToken');
-if (accessToken) {  
-  document.getElementById('logout-btn').classList.remove('d-none');
-} else {
-  document.getElementById('login-btn').classList.add('d-none');
-}
-
-document.getElementById('logout-btn').addEventListener('click', function () { 
-  localStorage.removeItem('accessToken'); 
-  this.classList.add('d-none');   
-  window.location.href = '../index.html';
-});
+logout();

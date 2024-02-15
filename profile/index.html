@@ -18,8 +18,7 @@
       </a>
       <div class="d-flex flex-row align-items-center ">
         <a class="nav-link text-white margin-left m-2 fw-bold text-stroke" href="../listings/index.html">Listings</a>
-        <button class="btn btn-primary btn-auction border-white text-white fw-bold text-stroke"
-          id="logout-btn">Logout</button>
+        <button class="btn btn-primary btn-auction border-white text-white fw-bold text-stroke d-none" id="logout-btn">Logout</button>
         <div class="profile-circle">
           <img src="../assets/img/auction-default-profile.jpg" alt="profile picture" class="profile-image">
           <img src="../assets/img/Profile_frame_1_2.png" alt="Profile frame" class="profile-frame">
@@ -38,16 +37,17 @@
           <div class="row">
             <!-- col-md-4 -->
             <div class="col-md-4 position-relative">
-              <img src="../assets/img/Profile_frame_2.png" alt="Profile frame" class="rounded-4 auction-item mt-4 img-fluid">
+              <div class="profile-page-circle">
+              <img src="../assets/img/Profile_frame_2.png" alt="Profile frame" class="rounded-4 mt-4 img-fluid">
               <img src="../assets/img/edit.png" alt="edit avatar" class="edit-avatar">
+            </div>
               <div>
                 <p class="mt-2">short bio description she/her<br>
                   language: English, Spanish
                   collects: rare shoes/boots
                   likes: sweet candy and cake</p>
               </div>
-            </div>
-            
+            </div>           
 
             <!-- active auctions -->
             <div class="col-md-8">
@@ -77,19 +77,16 @@
                 <div class="container mt-4">
                  
                     <div class="d-flex justify-content-center align-items-center">
-                      <div class="profile-circle m-2">
+                      <div class="m-2">
                         <img src="../assets/img/Credit_auction.png" alt="credits icon" class="profile-image">                        
                       </div>
                     <h3 class="text-black">Available Credits: xxx$</h3>
                   </div>
-                  </div>
-                  
+                  </div>                  
                 </div>
-
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -98,6 +95,7 @@
   </div>
 
   <script defer src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../src/js/api/auth/login.js" type="module" defer></script>
 </body>
 <footer>
   <div class="custom-shape-divider-bottom-1707191989">

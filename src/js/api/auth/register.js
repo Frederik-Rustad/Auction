@@ -1,5 +1,4 @@
-const BASE_URL = 'https://v2.api.noroff.dev/';
-const REGISTER_ENDPOINT = 'auth/register';
+import { BASE_URL, REGISTER_ENDPOINT } from '../apibase.js';
 
 console.log('api/auth/register.js loaded');
 
