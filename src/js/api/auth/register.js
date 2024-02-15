@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     fetch(BASE_URL + REGISTER_ENDPOINT, {
       method: 'POST',
+      body: JSON.stringify(userData),
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(userData),
     })
       .then(response => {
         if (response.status === 201) {
@@ -39,32 +39,10 @@ document.addEventListener('DOMContentLoaded', function () {
       })
 
       .catch(error => {
-        if (error.response) {
-          console.error('Error registering user:', error.response.status);
-
-          if (error.response.data && error.response.data.errors) {
-            error.response.data.errors.forEach(errorObject => {
-              const errorMessage = errorObject.message;
-              alert(`Error registering user: ${errorMessage}`);
-            });
-          } else if (error.response.data && error.response.data.message) {
-            const errorMessage = error.response.data.message;
-            alert(`Error registering user: ${errorMessage}`);
-          } else {
-            alert('Error registering user: Unknown error');
-          }
-        } else if (error.request) {
-          console.error('No response received from the server');
-          alert('No response received from the server');
-        } else {
-          // get the correct error message from the error object later
-          console.error('Error setting up the request:', error.message);
-          alert(`Something went wrong...  ${error.message}`);
-        }
+        
+        console.log(error);
+        alert(`Error registering user: ${error.message}`);
       });
+
   });
 });
-
-
-
-
