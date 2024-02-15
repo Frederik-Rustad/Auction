@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (response.status === 201) {
           return response.json();
         } else {
-          throw new Error('Unexpected status code: ' + response.status);
+          return response.json().then(data => Promise.reject({ data, status: response.status }));
         }
       })
       .then(data => {
@@ -38,10 +38,15 @@ document.addEventListener('DOMContentLoaded', function () {
       })
 
       .catch(error => {
-        
-        console.log(error);
-        alert(`Error registering user: ${error.message}`);
-      });
+        if (error.status === 400 && error.data && error.data.errors) {
+          const errorMessages = error.data.errors.map(err => err.message).join('\n');
+          alert(`Error registering user:\n${errorMessages}`);
+        } else {
+          
+          console.error('Error registering user:', error);
+          alert(`Error registering user: Unknown error\nCheck the console for details.`);
+        }
+      });    
 
   });
 });
