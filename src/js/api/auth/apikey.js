@@ -4,14 +4,12 @@ export async function fetchApiKey() {
     const accessToken = localStorage.getItem('accessToken');
     const api_key = 'api_key';
 
-    // Check if the accessToken is available
-    if (!accessToken) {
+     if (!accessToken) {
       console.error('Access token not available. User may not be authenticated.');
       return;
     }
 
-    // Set up headers
-    const options = {
+      const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -20,13 +18,12 @@ export async function fetchApiKey() {
       body: JSON.stringify({}),
     };
 
-    // Make the fetch request
     const response = await fetch(BASE_URL + API_KEY_ENDPOINT, options);
 
     if (response.ok) {
       const data = await response.json();
       console.log('API Key:', data);
-      localStorage.setItem(api_key, data.data.apiKey);
+      localStorage.setItem(api_key, data.data.key);
     } else {
       console.error('Error:', response.status, response.statusText);
     }
