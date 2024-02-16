@@ -1,20 +1,21 @@
-import { BASE_URL, LISTINGS_ENDPOINT } from "../apibase.js";
-import { fetchProfiles } from "../profiles/index.js";
+import { BASE_URL, PROFILE_ENDPOINT } from "../apibase.js";
 
-export async function fetchListings() {
+export async function fetchProfiles() {
   try {
+    const accessToken = localStorage.getItem('accessToken');
     const apiKey = localStorage.getItem("api_key");    
     const options = {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         "X-Noroff-API-Key": apiKey,
+        Authorization: `Bearer ${accessToken}`,
       },
     };
-    const response = await fetch(BASE_URL + LISTINGS_ENDPOINT, options);
+    const response = await fetch(BASE_URL + PROFILE_ENDPOINT, options);
     if (response.ok) {
       const data = await response.json();
-      console.log("Listings:", data);
+      console.log("Profiles:", data);
     } else {
       console.error("Error:", response.status, response.statusText);
     }
@@ -23,5 +24,3 @@ export async function fetchListings() {
     console.error("Fetch error:", error.message);
   }
 }
-
-fetchProfiles();
