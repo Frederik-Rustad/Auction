@@ -1,14 +1,16 @@
 import { BASE_URL, LISTINGS_ENDPOINT } from "../apibase.js";
-import { fetchProfiles } from "../profiles/index.js";
+
 
 export async function fetchListings() {
   try {
+    const accessToken = localStorage.getItem('accessToken');
     const apiKey = localStorage.getItem("api_key");    
     const options = {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         "X-Noroff-API-Key": apiKey,
+        Authorization: `Bearer ${accessToken}`,
       },
     };
     const response = await fetch(BASE_URL + LISTINGS_ENDPOINT, options);
@@ -24,4 +26,3 @@ export async function fetchListings() {
   }
 }
 
-fetchProfiles();

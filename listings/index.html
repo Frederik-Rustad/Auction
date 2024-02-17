@@ -36,33 +36,44 @@
     </div>
   </div>
 
-  <div class="container bg-card text-black rounded mb-4 col-10">
+   <!-- post listing form -->
+   <div class="container bg-card text-black rounded mb-4 col-10">
     <h2>
-      <a data-bs-toggle="collapse" href="#postForm" role="button" aria-expanded="false" aria-controls="postForm" class="text-white text-decoration-none fw-bold text-stroke"><h3>📜 Create an Auction +</h3></a>
+      <a data-bs-toggle="collapse" href="#postForm" role="button" aria-expanded="false" aria-controls="postForm" class="text-white text-decoration-none fw-bold text-stroke">
+        <h3>📜 Create an Auction +</h3>
+      </a>
     </h2>
     <div class="collapse" id="postForm">
-      <form>
-        <div class="mb-3">
-          <label for="postTitle" class="form-label">Title</label>
-          <input type="text" class="form-control " id="postTitle" name="postTitle" required>
-        </div>
-        <div class="mb-3">
-          <label for="postText" class="form-label">Auction Description</label>
-          <textarea class="form-control " id="postText" name="postText" rows="4"></textarea>
-        </div>
-        <div class="mb-3">
-          <label for="deadlineDate" class="form-label">Deadline Date</label>
-          <input type="date" class="form-control" id="deadlineDate" name="deadlineDate" required>
-        </div>
-        <div class="mb-3">
-          <label for="postImage" class="form-label">Upload Image</label>
-          <input type="file" class="form-control" id="postImage" name="postImage">
-        </div>
-        <button type="submit" class="btn btn-auction mb-2 fw-bold text-stroke text-white border-white">Post</button>
-      </form>
+<!-- Sample HTML Form -->
+<form id="createListingForm">
+  <div class="mb-3">
+    <label for="listingTitle" class="form-label">Title</label>
+    <input type="text" class="form-control" id="listingTitle" required>
+  </div>
+  <div class="mb-3">
+    <label for="listingDescription" class="form-label">Description</label>
+    <textarea class="form-control" id="listingDescription"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="listingTags" class="form-label">Tags</label>
+    <input type="text" class="form-control" id="listingTags">
+  </div>
+  <div class="mb-3">
+    <label for="listingMediaUrl" class="form-label">Media URL</label>
+    <input type="text" class="form-control" id="listingMediaUrl" required>
+  </div>
+  <div class="mb-3">
+    <label for="listingMediaAlt" class="form-label">Media Alt Text</label>
+    <input type="text" class="form-control" id="listingMediaAlt">
+  </div>
+  <div class="mb-3">
+    <label for="listingEndsAt" class="form-label">Ends At</label>
+    <input type="datetime-local" class="form-control" id="listingEndsAt" required>
+  </div>
+  <button type="button" onclick="createListing()" class="btn btn-auction mb-2 fw-bold text-stroke text-white border-white">Create Listing</button>
+</form>
     </div>
   </div>
-  
 
   <div class="container mt-4">
     <div class="row">
@@ -166,6 +177,7 @@
   </div>  
   <script defer src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>  
   <script src="../src/js/api/Listings/index.js" type="module" defer></script>
+  <script src="../src/js/api/Listings/post.js" type="module" defer></script>
 </body>
 <footer>
   <div class="custom-shape-divider-bottom-1707191989">

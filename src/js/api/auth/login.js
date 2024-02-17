@@ -2,10 +2,11 @@ import { BASE_URL, LOGIN_ENDPOINT } from '../apibase.js';
 import { logout } from './logout.js';
 
 
+
 document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault();
-
+     
     const loginData = {
       email: document.getElementById('loginEmail').value,
       password: document.getElementById('loginPassword').value,
@@ -30,7 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
       .then(data => {       
         localStorage.setItem('accessToken', data.data.accessToken);
         localStorage.setItem('userName', data.data.name);
-        alert('Login successful!');
+        localStorage.setItem('avatar', data.data.avatar.url);
+        alert(`Login successful! Welcome, ${data.data.name}`);
         console.log('User profile:', data);
         window.location.href = 'listings/index.html';
       })
@@ -39,5 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 });
+
 
 logout();
