@@ -1,12 +1,19 @@
 console.log('post.js loaded');
 
 export async function createListing() {
-  const title = document.getElementById('listingTitle').value;
-  const description = document.getElementById('listingDescription').value;
-  const tags = document.getElementById('listingTags').value.split(',').map(tag => tag.trim());
-  const mediaUrl = document.getElementById('listingMediaUrl').value;
-  const mediaAlt = document.getElementById('listingMediaAlt').value;
-  const endsAt = document.getElementById('listingEndsAt').value;
+  const titleInput = document.getElementById('listingTitle');
+  const descriptionInput = document.getElementById('listingDescription');
+  const tagsInput = document.getElementById('listingTags');
+  const mediaUrlInput = document.getElementById('listingMediaUrl');
+  const mediaAltInput = document.getElementById('listingMediaAlt');
+  const endsAtInput = document.getElementById('listingEndsAt');
+
+  const title = titleInput.value;
+  const description = descriptionInput.value;
+  const tags = tagsInput.value.split(',').map(tag => tag.trim());
+  const mediaUrl = mediaUrlInput.value;
+  const mediaAlt = mediaAltInput.value;
+  const endsAt = endsAtInput.value;
 
   const listingData = {
     title: title,
@@ -30,9 +37,21 @@ export async function createListing() {
     },
     body: JSON.stringify(listingData)
   })
-  .then(response => response.json())
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error(`Failed to create listing. Status: ${response.status}`);
+    }
+  })
   .then(data => {
-    console.log('Listing created successfully:', data);
+    console.log('Listing created successfully:', data);    
+    titleInput.value = '';
+    descriptionInput.value = '';
+    tagsInput.value = '';
+    mediaUrlInput.value = '';
+    mediaAltInput.value = '';
+    endsAtInput.value = '';
   })
   .catch(error => {
     console.error('Error creating listing:', error.message);

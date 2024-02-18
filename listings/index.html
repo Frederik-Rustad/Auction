@@ -70,7 +70,7 @@
     <label for="listingEndsAt" class="form-label">Ends At</label>
     <input type="datetime-local" class="form-control" id="listingEndsAt" required>
   </div>
-  <button type="button" onclick="createListing()" class="btn btn-auction mb-2 fw-bold text-stroke text-white border-white">Create Listing</button>
+  <button id="createListingBtn" type="button" class="btn btn-auction mb-2 fw-bold text-stroke text-white border-white">Create Listing</button>
 </form>
     </div>
   </div>
@@ -176,8 +176,7 @@
     </div>
   </div>  
   <script defer src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>  
-  <script src="../src/js/api/Listings/index.js" type="module" defer></script>
-  <script src="../src/js/api/Listings/post.js" type="module" defer></script>
+  <script src="../src/js/api/Listings/index.js" type="module" defer></script>  
 </body>
 <footer>
   <div class="custom-shape-divider-bottom-1707191989">

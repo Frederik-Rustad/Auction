@@ -11,4 +11,6 @@ fetchProfiles();
 
 logout();
 
-createListing();
+document.getElementById('createListingBtn').addEventListener('click', function () {
+  createListing();
+});
