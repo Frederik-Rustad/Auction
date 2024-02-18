@@ -4,22 +4,20 @@ export async function createListing() {
   const titleInput = document.getElementById('listingTitle');
   const descriptionInput = document.getElementById('listingDescription');
   const tagsInput = document.getElementById('listingTags');
-  const mediaUrlInput = document.getElementById('listingMediaUrl');
-  const mediaAltInput = document.getElementById('listingMediaAlt');
+  const mediaUrlInput = document.getElementById('listingMediaUrl');  
   const endsAtInput = document.getElementById('listingEndsAt');
 
   const title = titleInput.value;
   const description = descriptionInput.value;
   const tags = tagsInput.value.split(',').map(tag => tag.trim());
   const mediaUrl = mediaUrlInput.value;
-  const mediaAlt = mediaAltInput.value;
   const endsAt = endsAtInput.value;
 
   const listingData = {
     title: title,
     description: description,
     tags: tags,
-    media: [{ url: mediaUrl, alt: mediaAlt }],
+    media: [{ url: mediaUrl, alt: "Auction item image" }],
     endsAt: endsAt
   };
 
@@ -49,8 +47,7 @@ export async function createListing() {
     titleInput.value = '';
     descriptionInput.value = '';
     tagsInput.value = '';
-    mediaUrlInput.value = '';
-    mediaAltInput.value = '';
+    mediaUrlInput.value = '';    
     endsAtInput.value = '';
   })
   .catch(error => {

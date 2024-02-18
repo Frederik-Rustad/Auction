@@ -5,10 +5,8 @@ import { fetchProfiles } from "../profiles/index.js";
 import { createListing } from './post.js';
 
 fetchApiKey();
-
 fetchListings();
 fetchProfiles();
-
 logout();
 
 document.getElementById('createListingBtn').addEventListener('click', function () {
