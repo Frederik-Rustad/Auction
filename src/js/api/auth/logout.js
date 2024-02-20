@@ -14,4 +14,3 @@ document.getElementById('logout-btn').addEventListener('click', function () {
 });  
 }
 
-logout();

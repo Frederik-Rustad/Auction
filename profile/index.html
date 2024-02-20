@@ -39,7 +39,10 @@
             <div class="col-md-4 position-relative">
               <div class="profile-page-circle">
               <img src="../assets/img/Profile_frame_2.png" alt="Profile frame" class="rounded-4 mt-4 img-fluid">
-              <img src="../assets/img/edit.png" alt="edit avatar" class="edit-avatar">
+            </div>
+            <div class="d-flex align-items-end" data-bs-toggle="modal" data-bs-target="#editAvatarModal">             
+                <img src="../assets/img/edit.png" alt="edit avatar" class="edit-avatar" data-toggle="tooltip" data-placement="top" title="Edit Avatar">
+                <p>Edit avatar</p>              
             </div>
               <div>
                 <p class="mt-2">short bio description she/her<br>
@@ -47,7 +50,29 @@
                   collects: rare shoes/boots
                   likes: sweet candy and cake</p>
               </div>
-            </div>           
+            </div>       
+                  <!-- Edit Avatar Modal -->
+      <div class="modal" id="editAvatarModal" tabindex="-1" aria-labelledby="EditAvatarModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header text-white">
+              <h5 class="modal-title fw-bold text-stroke" id="updateModalLabel">Edit Avatar URL</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="../assets/img/edit_account_avatar.png" alt="Editing banner image" class="img-fluid">
+              <!-- Edit Form -->
+              <form id="editForm">
+                <div class="mb-3">
+                  <label for="UpdateAvatar" class="form-label">New Avatar URL</label>
+                  <input type="url" class="form-control" id="UpdateAvatar" name="avatar" placeholder="New URL to avatar IMG">
+                </div>
+                <button type="submit" class="btn btn-primary btn-login fw-bold text-stroke">Submit</button>  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>    
 
             <!-- active auctions -->
             <div class="col-md-8">
@@ -95,7 +120,9 @@
   </div>
 
   <script defer src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="../src/js/api/auth/login.js" type="module" defer></script>
+  <script src="../src/js/api/profiles/index.js" type="module" defer></script>
+  <script src="../src/js/api/profiles/updateProfile.js" type="module" defer></script>
+
 </body>
 <footer>
   <div class="custom-shape-divider-bottom-1707191989">

@@ -1,4 +1,5 @@
 import { BASE_URL, API_KEY_ENDPOINT } from '../apibase.js';
+
 export async function fetchApiKey() {
   try {
     const accessToken = localStorage.getItem('accessToken');

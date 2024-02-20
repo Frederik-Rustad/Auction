@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
           
           console.error('Error registering user:', error);
-          alert(`Error registering user: Unknown error\nCheck the console for details.`);
+          alert(`Error registering user: ${error}.`);
         }
       });    
 

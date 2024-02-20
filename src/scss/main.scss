@@ -70,11 +70,9 @@ p, a {
   position: relative;  
   margin-left: 10px;
 }
-.edit-avatar {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: 2;
+.edit-avatar { 
+  max-width: 60px;
+ content: "edit";
 }
 
 .text-stroke {
@@ -112,4 +110,9 @@ main {
   justify-self: end;
   max-width: 250px;
   height: auto;
+}
+
+.card-img {
+  max-width: 260px;
+  height: 260px;
 }

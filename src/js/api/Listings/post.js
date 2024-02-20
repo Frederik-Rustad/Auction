@@ -52,5 +52,6 @@ export async function createListing() {
   })
   .catch(error => {
     console.error('Error creating listing:', error.message);
+    // put the error message in a div on the page, later.
   });
 };

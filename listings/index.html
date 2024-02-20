@@ -79,7 +79,7 @@
           <label class="input-group-text fw-bold" for="auctionFilter">Filter:</label>
           <select class="form-select  fw-bold" id="auctionFilter">
             <option value="newest">Newest</option>
-            <option value="endingSoon">Ending Soon</option>
+            <option value="endingSoon">Oldest</option>
             <option value="mostBids">Most Bids</option>
             <option value="leastBids">Least Bids</option>
           </select>
@@ -96,9 +96,11 @@
     </div>
   </div>
 
-  <div class="container mb-4" id="listings-container">
+  <div class="container mb-4" id="listings-container-outer">
 
-    <div class="col-md-12 row d-flex justify-content-evenly gy-3">
+    <div class="col-md-12 row d-flex justify-content-evenly gy-3" id="listings-container-inner">
+
+      <!-- 
       <div class="card" style="width: 18rem;">
         <img src="../assets/img/auction_items_placeholder/H7byTJ5Pt-sas2Mq2R7yT.png" class="card-img-top" alt="...">
         <div class="card-body">
@@ -108,66 +110,7 @@
           <a href="../Auction/index.html" class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>
         </div>
       </div>
-      <div class="card" style="width: 18rem;">
-        <img src="../assets/img/auction_items_placeholder/WUKoAJzEH-QLYRn7E9uDY.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title fw-bold">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p>auction end date: dd/mm/yyyy</p> 
-          <a href="#" class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <img src="../assets/img/auction_items_placeholder/YqvsIkrqWcpZM531F-gtY.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title fw-bold">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p>auction end date: dd/mm/yyyy</p> 
-          <a href="#" class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>
-        </div>
-      </div>
-      
-      <div class="card" style="width: 18rem;">
-        <img src="../assets/img/auction_items_placeholder/2haH8YkLSxKJ-iFqe3D6y.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title fw-bold">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p>auction end date: dd/mm/yyyy</p> 
-          <a href="#" class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>
-        </div>
-      </div><div class="card" style="width: 18rem;">
-        <img src="../assets/img/auction_items_placeholder/br ba on X.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title fw-bold">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p>auction end date: dd/mm/yyyy</p>                    
-          <a href="#" class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>
-        </div>
-      </div><div class="card" style="width: 18rem;">
-        <img src="../assets/img/auction_items_placeholder/H7byTJ5Pt-sas2Mq2R7yT.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title fw-bold">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p>auction end date: dd/mm/yyyy</p> 
-          <a href="#" class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>
-        </div>
-      </div><div class="card" style="width: 18rem;">
-        <img src="../assets/img/auction_items_placeholder/WUKoAJzEH-QLYRn7E9uDY.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title fw-bold">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p>auction end date: dd/mm/yyyy</p> 
-          <a href="#" class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>
-        </div>
-      </div><div class="card" style="width: 18rem;">
-        <img src="../assets/img/auction_items_placeholder/YqvsIkrqWcpZM531F-gtY.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title fw-bold">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p>auction end date: dd/mm/yyyy</p> 
-          <a href="#" class="btn btn-primary btn-auction text-white fw-bold text-stroke">Veiw & Bid</a>
-        </div>
-      </div> 
+      </div>  -->
 
     </div>
   </div>  

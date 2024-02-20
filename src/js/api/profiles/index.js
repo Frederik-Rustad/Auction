@@ -1,4 +1,10 @@
 import { BASE_URL, PROFILE_ENDPOINT } from "../apibase.js";
+import { logout } from '../auth/logout.js';
+
+console.log('Profile index.js loaded');
+
+
+logout();
 
 export async function fetchProfiles() {
   try {

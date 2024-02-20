@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
       .then(data => {       
         localStorage.setItem('accessToken', data.data.accessToken);
         localStorage.setItem('userName', data.data.name);
-        localStorage.setItem('avatar', data.data.avatar.url);
+        localStorage.setItem('profile', JSON.stringify(data));
         alert(`Login successful! Welcome, ${data.data.name}`);
         console.log('User profile:', data);
         window.location.href = 'listings/index.html';
