@@ -1,6 +1,4 @@
 import { BASE_URL, PROFILE_ENDPOINT } from '../apibase.js';
-// updates the user avatar successfully, but need to logout and in again to see the changes.!!!???? fix later
-// most likely not this code, but the code in the profile.js file
 
 console.log('update avatar loaded');
 
@@ -45,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         alert('User Avatar updated successfully!');
+        window.location.href = '../profile/index.html';
       })
       .catch(error => {
       
@@ -60,24 +59,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
   });
 });
-
-// move to own .js file later
-function userProfileAvatar() {
-  document.addEventListener('DOMContentLoaded', function () {
-    const storedProfile = localStorage.getItem('profile');
-    const profileData = storedProfile ? JSON.parse(storedProfile) : null;
-    const accessToken = localStorage.getItem('accessToken');
-  
-    const profileImageElement = document.querySelector('.profile-image');
-  
-    if (profileImageElement) {
-      if (accessToken && profileData) {
-        profileImageElement.src = profileData.data.avatar.url;
-        profileImageElement.alt = 'profile picture';
-      } else {
-        profileImageElement.src = '../assets/img/auction-default-profile.jpg';
-        profileImageElement.alt = 'User not logged in, default profile picture';
-      }
-    }});
-  };
-  userProfileAvatar()

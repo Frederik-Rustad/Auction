@@ -8,7 +8,7 @@ if (accessToken) {
 document.getElementById('logout-btn').addEventListener('click', function () { 
   localStorage.removeItem('accessToken'); 
   localStorage.removeItem('userName');
-  localStorage.removeItem('avatar');
+  localStorage.removeItem('profile');
   this.classList.add('d-none');   
   window.location.href = '../index.html';
 });  
