@@ -2,7 +2,7 @@ import { BASE_URL, LOGIN_ENDPOINT } from '../apibase.js';
 import { logout } from './logout.js';
 
 
-
+export function login() {
 document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -41,6 +41,4 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 });
-
-
-logout();
+}

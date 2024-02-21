@@ -4,7 +4,9 @@ import { fetchListings } from './listings.js';
 import { fetchProfiles, fetchUserProfile } from "../profiles/index.js";
 import { createListing } from './post.js'; 
 import { userProfileAvatar } from '../../utils/displayProfileAvatar.js';
+import { searchForListing } from './search.js';
 
+searchForListing();
 fetchApiKey();
 fetchListings();
 fetchProfiles();

@@ -33,14 +33,15 @@ export async function fetchSingleListings() {
       const data = await response.json();
       console.log('Single Listing:', data.data);
 
-     
+
       const auctionTitleElement = document.getElementById('auctionTitle');
       if (auctionTitleElement) {
-        auctionTitleElement.textContent = data.data.title; 
+        auctionTitleElement.textContent = data.data.title;
       }
+
       const auctionItemInfoElement = document.getElementById('auctionItemInfo');
-      if (auctionItemInfoElement) {     
-       
+      if (auctionItemInfoElement) {
+
         const image = data.data.media[0].url;
         const img = document.createElement('img');
         img.src = image;
@@ -66,7 +67,13 @@ export async function fetchSingleListings() {
           paragraphElement.textContent = description;
         }
       }
-
+      const auctionEndsAtElement = document.getElementById('auctionEndsAt');
+      if (auctionEndsAtElement) {
+        const endsAt = new Date(data.data.endsAt).toLocaleDateString();
+        const endsAtText = document.createElement('span');
+        endsAtText.textContent = `Bidding closes on: ${endsAt} , ${new Date(data.data.endsAt).toLocaleTimeString()}`;
+        auctionEndsAtElement.appendChild(endsAtText);
+      }
 
     } else {
       console.error("Error:", response.status, response.statusText);
