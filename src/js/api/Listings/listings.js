@@ -2,14 +2,12 @@ import { BASE_URL, LISTINGS_ENDPOINT } from "../apibase.js";
 
 export async function fetchListings() {
   try {
-    const accessToken = localStorage.getItem('accessToken');
-    const apiKey = localStorage.getItem("api_key");    
+    const apiKey = localStorage.getItem("api_key");
     const options = {
       method: "GET",
       headers: {
-        "Content-Type": "application/json", 
+        "Content-Type": "application/json",
         "X-Noroff-API-Key": apiKey,
-        Authorization: `Bearer ${accessToken}`,
       },
     };
     const response = await fetch(BASE_URL + LISTINGS_ENDPOINT, options);
@@ -19,17 +17,17 @@ export async function fetchListings() {
       const listingsContainer = document.getElementById('listings-container-inner');
 
       console.log(data);
-      
+
       listingsContainer.innerHTML = '';
 
-            data.data.forEach(listing => {
+      data.data.forEach(listing => {
         const card = document.createElement('div');
         card.classList.add('card');
         card.style.width = '18rem';
 
         const img = document.createElement('img');
         img.src = listing.media[0].url;
-        img.classList.add('card-img-top', 'card-img','mt-2');
+        img.classList.add('card-img-top', 'card-img', 'mt-2');
         img.alt = 'Auction Item Image';
 
         const cardBody = document.createElement('div');
@@ -47,24 +45,27 @@ export async function fetchListings() {
         endDate.textContent = `Auction end date: ${new Date(listing.endsAt).toLocaleDateString()}`;
 
         const viewBidButton = document.createElement('a');
-        viewBidButton.href = '../Auction/index.html';  // Add actual link with queryparameters later !!!!!!!!!!!!!!!!!!!
+        const singleListingUrl = '../../Auction/index.html';
+        const linkWithQueryParameter = `${singleListingUrl}?listingId=${listing.id}`;
+        viewBidButton.href = linkWithQueryParameter;
         viewBidButton.classList.add('btn', 'btn-primary', 'btn-auction', 'text-white', 'fw-bold', 'text-stroke');
         viewBidButton.textContent = 'View & Bid';
+        viewBidButton.dataset.listingId = listing.id;
 
-      
-        cardBody.appendChild(title);       
+        cardBody.appendChild(title);
         cardBody.appendChild(endDate);
         cardBody.appendChild(viewBidButton);
         card.appendChild(img);
         card.appendChild(cardBody);
 
         listingsContainer.appendChild(card);
+
+        
       });
     } else {
       console.error("Error:", response.status, response.statusText);
     }
-  }
-  catch (error) {
+  } catch (error) {
     console.error("Fetch error:", error.message);
   }
 }

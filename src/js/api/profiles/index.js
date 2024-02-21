@@ -28,18 +28,16 @@ export async function fetchProfiles() {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Profiles - Page", page, ":", data.data);
+        console.log("Profiles - Page", page, ":", data.data);        
 
-        if (!data.meta.isLastPage) {
-          // If it's not the last page, fetch the next one
+        if (!data.meta.isLastPage) {          
           await fetchPage(page + 1);
         }
       } else {
         console.error("Error fetching profiles - Page", page, ":", response.status, response.statusText);
       }
     }
-
-    // Start fetching from the first page
+  
     await fetchPage(currentPage);
   } catch (error) {
     console.error("Fetch error:", error.message);
