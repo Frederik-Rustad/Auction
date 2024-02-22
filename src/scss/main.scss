@@ -63,14 +63,7 @@ p, a {
   transform: translate(-50%, -50%);
   z-index: 2; 
 }
-.profile-page-circle {
-  display: flex;
-  max-width: 350px;
-  max-height: 350px;
-  border-radius: 50%;
-  position: relative;  
-  margin-left: 10px;
-}
+
 .edit-avatar { 
  max-width: 60px;
 }
@@ -112,4 +105,30 @@ p, a {
 .card-img {
   max-width: 260px;
   height: 260px;
+}
+
+.profile-page-circle {
+  display: flex;
+  max-width: 350px;
+  max-height: 350px;
+  border-radius: 50%;
+  position: relative;  
+  margin-left: 10px;
+}
+
+#userAvatar {
+  max-width: 70%;
+  height: auto; 
+  border-radius: 50%;
+  z-index: 1;
+  transform: translateY(10%);
+}
+
+#userAvatarFrame {
+  width: 100%;
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; 
 }

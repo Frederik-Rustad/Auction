@@ -9,6 +9,7 @@ export function register() {
         name: document.getElementById('registerName').value,
         email: document.getElementById('registerEmail').value,
         password: document.getElementById('registerPassword').value,
+        bio: document.getElementById('registerBio').value,
         avatar: {
           url: document.getElementById('registerAvatar').value,
         },

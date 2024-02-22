@@ -2,7 +2,9 @@ import { BASE_URL, LISTINGS_ENDPOINT } from "../apibase.js";
 import { displayCredits } from "../../utils/displayCredits.js";
 import { userProfileAvatar } from "../../utils/displayProfileAvatar.js";
 import { logout } from "../auth/logout.js";
+import { bid } from "./bid.js";
 
+bid();
 displayCredits();
 userProfileAvatar();
 logout();

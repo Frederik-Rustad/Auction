@@ -5,7 +5,6 @@ export function searchForListing() {
     const searchInput = document.getElementById('searchInput');
     const searchButton = document.getElementById('searchButton');
 
-    // Add an event listener for the 'keydown' event on the input
     searchInput.addEventListener('keydown', function (event) {
       if (event.key === 'Enter') {
         triggerSearch();
@@ -34,15 +33,14 @@ export function searchForListing() {
           'Content-Type': 'application/json',
         },
       })
-        .then(response => {
+        .then( async response => {
           if (response.ok) {
             return response.json();
           } else {
             return response.json().then(data => Promise.reject({ data, status: response.status }));
           }
         })
-        .then(data => {
-          // Process the search results
+        .then(data => {        
           console.log('Search Results:', data);
           updateListingsContainer(data.data);
         })
