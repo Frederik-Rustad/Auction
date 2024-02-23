@@ -34,49 +34,80 @@ export async function fetchSingleListings() {
     if (response.ok) {
       const data = await response.json();
       console.log('Single Listing:', data.data);
-
-
+      
       const auctionTitleElement = document.getElementById('auctionTitle');
-      if (auctionTitleElement) {
-        auctionTitleElement.textContent = data.data.title;
-      }
-
       const auctionItemInfoElement = document.getElementById('auctionItemInfo');
-      if (auctionItemInfoElement) {
-
-        const image = data.data.media[0].url;
-        const img = document.createElement('img');
-        img.src = image;
-        img.classList.add('rounded-4', 'auction-item', 'mt-4', 'img-fluid');
-        img.alt = 'Auction Item Image';
-        auctionItemInfoElement.appendChild(img);
-
-        const seller = data.data.seller.name;
-        const sellerElement = document.createElement('h3');
-        sellerElement.classList.add('mt-2', 'fw-bold', 'text-black');
-        auctionItemInfoElement.appendChild(sellerElement);
-
-        if (sellerElement) {
-          sellerElement.textContent = `Seller: ${seller}`;
-        }
-
-        const description = data.data.description;
-        const paragraphElement = document.createElement('p');
-        paragraphElement.classList.add('mt-4');
-        auctionItemInfoElement.appendChild(paragraphElement);
-
-        if (paragraphElement) {
-          paragraphElement.textContent = description;
-        }
-      }
       const auctionEndsAtElement = document.getElementById('auctionEndsAt');
-      if (auctionEndsAtElement) {
-        const endsAt = new Date(data.data.endsAt).toLocaleDateString();
-        const endsAtText = document.createElement('span');
-        endsAtText.textContent = `Bidding closes on: ${endsAt} , ${new Date(data.data.endsAt).toLocaleTimeString()}`;
-        auctionEndsAtElement.appendChild(endsAtText);
+      const auctionBidsElement = document.getElementById('auctionBidsContainer');
+
+      if (auctionBidsElement) {
+        const bid = document.createElement('p');
+        bid.textContent = `${data.data.bids[0].bidder.name} bid: ${data.data.bids[0].amount} Credits`;
+        auctionBidsElement.appendChild(bid);
+      
       }
 
+      if (auctionEndsAtElement) {const endsAtDate = new Date(data.data.endsAt);
+        const currentDate = new Date();
+        
+        if (endsAtDate < currentDate) {
+
+          if (auctionTitleElement) {
+            auctionTitleElement.textContent = "Auction Closed";
+            const bidButton = document.getElementById('placeBid');
+            bidButton.disabled = true;
+          }
+        
+          if (auctionItemInfoElement) {
+            auctionItemInfoElement.innerHTML = '';
+        
+            const img = document.createElement('img');
+            img.src = "../../../assets/img/sold_auction.png";
+            img.classList.add('rounded-4', 'auction-item', 'mt-4', 'img-fluid');
+            img.alt = 'Auction Item Image';
+            auctionItemInfoElement.appendChild(img);
+
+            const endedAuctionInfo = document.createElement('p');
+            endedAuctionInfo.textContent = "This auction has ended. Thank you for participating!";
+            auctionItemInfoElement.appendChild(endedAuctionInfo);
+          }
+        
+          if (auctionEndsAtElement) {
+            auctionEndsAtElement.textContent = 'Bidding has ended';
+          }
+        } else {
+          if (auctionTitleElement) {
+            auctionTitleElement.textContent = data.data.title;
+          }
+        
+          if (auctionItemInfoElement) {
+            const image = data.data.media[0].url;
+            const img = document.createElement('img');
+            img.src = image;
+            img.classList.add('rounded-4', 'auction-item', 'mt-4', 'img-fluid');
+            img.alt = 'Auction Item Image';
+            auctionItemInfoElement.appendChild(img);
+        
+            const seller = data.data.seller.name;
+            const sellerElement = document.createElement('h3');
+            sellerElement.classList.add('mt-2', 'fw-bold', 'text-black');
+            sellerElement.textContent = `Seller: ${seller}`;
+            auctionItemInfoElement.appendChild(sellerElement);
+        
+            const description = data.data.description;
+            const paragraphElement = document.createElement('p');
+            paragraphElement.classList.add('mt-4');
+            paragraphElement.textContent = description;
+            auctionItemInfoElement.appendChild(paragraphElement);
+          }
+        
+          if (auctionEndsAtElement) {
+            const endsAtText = document.createElement('span');
+            endsAtText.textContent = `Bidding closes on: ${endsAtDate.toLocaleDateString()} , ${endsAtDate.toLocaleTimeString()}`;
+            auctionEndsAtElement.appendChild(endsAtText);
+          }
+        }
+      }
     } else {
       console.error("Error:", response.status, response.statusText);
     }

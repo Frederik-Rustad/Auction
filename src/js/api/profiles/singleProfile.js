@@ -41,6 +41,8 @@ export async function displayUserInfo() {
       const userBio = document.getElementById('userBio');
       if (userBio) {
         userBio.innerText = data.data.bio;
+      } if (data.data.bio === null) {
+        userBio.innerText = `Silent bidder, letting the items and bid's speak louder than words. also i didn't write a bio.`;
       }
       
     } else {

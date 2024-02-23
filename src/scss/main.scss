@@ -117,9 +117,10 @@ p, a {
 }
 
 #userAvatar {
-  max-width: 70%;
+  max-width: 80%;
   height: auto; 
   z-index: 1;  
+  border-radius: 50%;
 }
 
 #userAvatarFrame {

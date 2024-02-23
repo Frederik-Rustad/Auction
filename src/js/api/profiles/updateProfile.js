@@ -2,6 +2,7 @@ import { BASE_URL, PROFILE_ENDPOINT } from '../apibase.js';
 
 console.log('update avatar loaded');
 
+export async function updateAvatar() {
 document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('editForm').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -59,3 +60,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
   });
 });
+};
