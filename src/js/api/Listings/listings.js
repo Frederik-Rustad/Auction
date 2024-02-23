@@ -35,11 +35,7 @@ export async function fetchListings() {
 
         const title = document.createElement('h5');
         title.classList.add('card-title', 'fw-bold');
-        title.textContent = listing.title;
-
-        const description = document.createElement('p');
-        description.classList.add('card-text');
-        description.textContent = listing.description;
+        title.textContent = listing.title;        
 
         const endDate = document.createElement('p');
         endDate.textContent = `Auction end date: ${new Date(listing.endsAt).toLocaleDateString()}`;
@@ -53,6 +49,7 @@ export async function fetchListings() {
         viewBidButton.dataset.listingId = listing.id;
 
         cardBody.appendChild(title);
+        
         cardBody.appendChild(endDate);
         cardBody.appendChild(viewBidButton);
         card.appendChild(img);
@@ -60,6 +57,15 @@ export async function fetchListings() {
 
         listingsContainer.appendChild(card);
 
+        const endAuctionDate = new Date(listing.endsAt);
+        const currentDate = new Date();
+     
+        if (endAuctionDate < currentDate) {
+          viewBidButton.textContent = 'Auction Closed';           
+          endDate.textContent = `Auction ended at: ${new Date(listing.endsAt).toLocaleDateString()}`;      
+
+        }
+        
         
       });
     } else {

@@ -39,13 +39,28 @@ export async function fetchSingleListings() {
       const auctionItemInfoElement = document.getElementById('auctionItemInfo');
       const auctionEndsAtElement = document.getElementById('auctionEndsAt');
       const auctionBidsElement = document.getElementById('auctionBidsContainer');
-
-      if (auctionBidsElement) {
-        const bid = document.createElement('p');
-        bid.textContent = `${data.data.bids[0].bidder.name} bid: ${data.data.bids[0].amount} Credits`;
-        auctionBidsElement.appendChild(bid);
+      const bidDenier = localStorage.getItem('accessToken')
       
+      if (bidDenier === null) {
+        const bidButton = document.getElementById('placeBid');
+        bidButton.disabled = true;
       }
+
+      if (auctionBidsElement) {      
+        auctionBidsElement.innerHTML = '<h3 class="text-white text-stroke bg-card rounded-top" >Bids</h3>';   
+        
+        if (data.data.bids && data.data.bids.length > 0) {
+            data.data.bids.forEach((bid) => {
+                const bidElement = document.createElement('p');
+                bidElement.textContent = `${bid.bidder.name} bid: ${bid.amount} Credits`;
+                auctionBidsElement.appendChild(bidElement);
+            });
+        } else {            
+            const noBidsMessage = document.createElement('p');
+            noBidsMessage.textContent = "No bids have been placed yet.";
+            auctionBidsElement.appendChild(noBidsMessage);
+        }
+    }
 
       if (auctionEndsAtElement) {const endsAtDate = new Date(data.data.endsAt);
         const currentDate = new Date();
