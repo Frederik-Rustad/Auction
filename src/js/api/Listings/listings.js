@@ -43,7 +43,7 @@ export async function fetchListings() {
         endDate.textContent = `Auction end date: ${new Date(listing.endsAt).toLocaleDateString()}`;
 
         const viewBidButton = document.createElement("a");
-        const singleListingUrl = "../../Auction/index.html";
+        const singleListingUrl = "../../Single-Auction/index.html";
         const linkWithQueryParameter = `${singleListingUrl}?listingId=${listing.id}`;
         viewBidButton.href = linkWithQueryParameter;
         viewBidButton.classList.add(
