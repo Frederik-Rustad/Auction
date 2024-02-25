@@ -1,12 +1,12 @@
-console.log('api/index.js loaded');
+console.log("api/index.js loaded");
 
-const registerForm = document.querySelector('#registerForm');
+const registerForm = document.querySelector("#registerForm");
 
-registerForm.addEventListener('submit', function(event) {
+registerForm.addEventListener("submit", function (event) {
   event.preventDefault();
- registerUser();
+  registerUser();
 });
 
 function registerUser() {
-  console.log('registerd User');
+  console.log("registerd User");
 }
