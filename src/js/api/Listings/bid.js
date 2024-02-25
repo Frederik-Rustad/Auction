@@ -56,8 +56,15 @@ export function bid() {
         console.log("Bid placed successfully", data);
         location.reload();
       })
-      .catch((error) => {
-        console.error("Error placing bid:", error);
-      });
+     .catch((error) => {
+  if (error.errors && error.errors.length > 0) {
+    const errorMessage = error.errors[0].message;
+    console.error("Error placing bid:", errorMessage);
+    alert(errorMessage);
+  } else {
+    console.error("Error placing bid:", error.message);
+    alert(error.message);
+  }
+});
   }
 }
