@@ -10,8 +10,9 @@ export function userProfileAvatar() {
         profileImageElement.src = profileData.data.avatar.url;
         profileImageElement.alt = "profile picture";
       } else {
-       
-        const defaultProfilePath = window.location.pathname("https://frederik-rustad.github.io/Auction-Hub/index.html")
+        const isIndexPage = window.location.href === "https://frederik-rustad.github.io/Auction-Hub/index.html";
+
+        const defaultProfilePath = isIndexPage
           ? "assets/img/auction-default-profile.jpg"
           : "../assets/img/auction-default-profile.jpg";
 
