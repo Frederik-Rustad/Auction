@@ -1,8 +1,9 @@
 import { BASE_URL, LISTINGS_ENDPOINT } from "../apibase.js";
+import { API_KEY } from "../auth/apikey.js";
 
 export async function fetchListings() {
   try {
-    const apiKey = localStorage.getItem("api_key");
+    const apiKey = API_KEY
     const options = {
       method: "GET",
       headers: {

@@ -2,6 +2,7 @@ import { BASE_URL, LISTINGS_ENDPOINT } from "../apibase.js";
 import { displayCredits } from "../../utils/displayCredits.js";
 import { userProfileAvatar } from "../../utils/displayProfileAvatar.js";
 import { logout } from "../auth/logout.js";
+import { API_KEY } from "../auth/apikey.js";
 import { bid } from "./bid.js";
 
 bid();
@@ -20,7 +21,7 @@ export async function fetchSingleListings() {
       return;
     }
 
-    const apiKey = localStorage.getItem("api_key");
+    const apiKey = API_KEY;
     const options = {
       method: "GET",
       headers: {
