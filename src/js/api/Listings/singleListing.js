@@ -83,7 +83,7 @@ export async function fetchSingleListings() {
             auctionItemInfoElement.innerHTML = "";
 
             const img = document.createElement("img");
-            img.src = "../../../assets/img/sold_auction.png";
+            img.src = "../assets/img/sold_auction.png";
             img.classList.add("rounded-4", "auction-item", "mt-4", "img-fluid");
             img.alt = "Auction Item Image";
             auctionItemInfoElement.appendChild(img);
