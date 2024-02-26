@@ -1,5 +1,6 @@
 import { BASE_URL, PROFILE_ENDPOINT } from "../api/apibase.js";
 
+
 console.log("display credits loaded");
 
 export async function displayCredits() {
@@ -8,8 +9,7 @@ export async function displayCredits() {
     const apiKey = "8013f1a8-b8b3-4410-a979-0307c32b7ddd";
     const userName = localStorage.getItem("userName");
 
-    if (!userName) {
-      console.error("Username not available");
+    if (!userName) {   
       return;
     }
 
