@@ -9,8 +9,9 @@ export function userProfileAvatar() {
       if (accessToken && profileData) {
         profileImageElement.src = profileData.data.avatar.url;
         profileImageElement.alt = "profile picture";
-      } else {        
-        const defaultProfilePath = window.location.pathname.startsWith("index.html")
+      } else {
+       
+        const defaultProfilePath = window.location.pathname("https://frederik-rustad.github.io/Auction-Hub/index.html")
           ? "assets/img/auction-default-profile.jpg"
           : "../assets/img/auction-default-profile.jpg";
 
@@ -33,12 +34,7 @@ export function userProfilePageAvatar() {
         profileImageElement.src = profileData.data.avatar.url;
         profileImageElement.alt = "profile picture";
       } else {
-        
-        const defaultProfilePath = window.location.pathname.startsWith("index.html")
-          ? "assets/img/auction-default-profile.jpg"
-          : "../assets/img/auction-default-profile.jpg";
-
-        profileImageElement.src = defaultProfilePath;
+        profileImageElement.src = "../assets/img/auction-default-profile.jpg";
         profileImageElement.alt = "User not logged in, default profile picture";
       }
     }
