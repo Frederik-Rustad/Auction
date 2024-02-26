@@ -9,8 +9,12 @@ export function userProfileAvatar() {
       if (accessToken && profileData) {
         profileImageElement.src = profileData.data.avatar.url;
         profileImageElement.alt = "profile picture";
-      } else {
-        profileImageElement.src = "../assets/img/auction-default-profile.jpg";
+      } else {        
+        const defaultProfilePath = window.location.pathname.startsWith("index.html")
+          ? "assets/img/auction-default-profile.jpg"
+          : "../assets/img/auction-default-profile.jpg";
+
+        profileImageElement.src = defaultProfilePath;
         profileImageElement.alt = "User not logged in, default profile picture";
       }
     }
@@ -29,7 +33,12 @@ export function userProfilePageAvatar() {
         profileImageElement.src = profileData.data.avatar.url;
         profileImageElement.alt = "profile picture";
       } else {
-        profileImageElement.src = "../assets/img/auction-default-profile.jpg";
+        
+        const defaultProfilePath = window.location.pathname.startsWith("index.html")
+          ? "assets/img/auction-default-profile.jpg"
+          : "../assets/img/auction-default-profile.jpg";
+
+        profileImageElement.src = defaultProfilePath;
         profileImageElement.alt = "User not logged in, default profile picture";
       }
     }
