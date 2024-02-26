@@ -5,7 +5,7 @@ console.log("display credits loaded");
 export async function displayCredits() {
   try {
     const accessToken = localStorage.getItem("accessToken");
-    const apiKey = localStorage.getItem("api_key");
+    const apiKey = "8013f1a8-b8b3-4410-a979-0307c32b7ddd";
     const userName = localStorage.getItem("userName");
 
     if (!userName) {

@@ -1,4 +1,5 @@
 import { BASE_URL, LISTINGS_ENDPOINT, BIDS_ENDPOINT } from "../apibase.js";
+import { API_KEY } from "../auth/apikey.js";
 
 export function bid() {
   document.addEventListener("DOMContentLoaded", function () {
@@ -27,7 +28,7 @@ export function bid() {
     };
 
     const accessToken = localStorage.getItem("accessToken");
-    const apiKey = localStorage.getItem("api_key");
+    const apiKey = API_KEY;
     const urlParams = new URLSearchParams(window.location.search);
     const listingId = urlParams.get("listingId");
     if (!listingId) {

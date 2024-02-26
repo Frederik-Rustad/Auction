@@ -1,22 +1,17 @@
 import { BASE_URL, API_KEY_ENDPOINT } from "../apibase.js";
 
+export const API_KEY = "8013f1a8-b8b3-4410-a979-0307c32b7ddd"
+
 export async function fetchApiKey() {
   try {
-    const accessToken = localStorage.getItem("accessToken");
+   
     const api_key = "api_key";
-
-    if (!accessToken) {
-      console.error(
-        "Access token not available. User may not be authenticated.",
-      );
-      return;
-    }
+   
 
     const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${accessToken}`,
       },
       body: JSON.stringify({}),
     };

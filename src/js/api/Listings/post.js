@@ -1,3 +1,5 @@
+import { API_KEY } from "../auth/apikey.js";
+
 console.log("post.js loaded");
 
 export async function createListing() {
@@ -22,7 +24,7 @@ export async function createListing() {
   };
 
   const accessToken = localStorage.getItem("accessToken");
-  const apiKey = localStorage.getItem("api_key");
+  const apiKey = API_KEY;
   const BASE_URL = "https://v2.api.noroff.dev/";
   const LISTINGS_ENDPOINT = "auction/listings";
 

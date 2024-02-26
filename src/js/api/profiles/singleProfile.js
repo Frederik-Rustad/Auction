@@ -1,11 +1,12 @@
 import { BASE_URL, PROFILE_ENDPOINT } from "../apibase.js";
+import { API_KEY } from "../auth/apikey.js";
 
 console.log("singleProfile.js is running");
 
 export async function displayUserInfo() {
   try {
     const accessToken = localStorage.getItem("accessToken");
-    const apiKey = localStorage.getItem("api_key");
+    const apiKey = API_KEY;
     const userName = localStorage.getItem("userName");
 
     if (!userName) {
