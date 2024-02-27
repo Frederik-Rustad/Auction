@@ -31,7 +31,7 @@ export async function fetchListings() {
         const img = document.createElement("img");
         img.src = listing.media[0].url;
         img.classList.add("card-img-top", "card-img", "mt-2");
-        img.alt = "Auction Item Image";
+        img.alt = listing.title;
 
         const cardBody = document.createElement("div");
         cardBody.classList.add("card-body");

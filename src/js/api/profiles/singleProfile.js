@@ -10,8 +10,7 @@ export async function displayUserInfo() {
     const userName = localStorage.getItem("userName");
 
     if (!userName) {
-      console.error("Username not available");
-      return;
+       return;
     }
 
     const options = {

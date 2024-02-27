@@ -7,8 +7,7 @@ export async function fetchUserProfile() {
     const apiKey = API_KEY;
     const userName = localStorage.getItem("userName");
 
-    if (!userName) {
-      console.error("Username not available");
+    if (!userName) {     
       return;
     }
 

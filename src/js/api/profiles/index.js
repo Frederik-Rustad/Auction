@@ -1,5 +1,5 @@
 import { BASE_URL, PROFILE_ENDPOINT } from "../apibase.js";
-import { logout } from "../auth/logout.js";
+import { logout, manageLoginButton } from "../auth/logout.js";
 import { userProfileAvatar } from "../../utils/displayProfileAvatar.js";
 import { displayCredits } from "../../utils/displayCredits.js";
 import { displayUserInfo } from "./singleProfile.js";
@@ -14,3 +14,6 @@ displayUserInfo();
 displayCredits();
 userProfileAvatar();
 logout();
+document.addEventListener("DOMContentLoaded", function () {
+  manageLoginButton();
+});
