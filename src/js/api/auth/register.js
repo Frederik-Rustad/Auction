@@ -7,15 +7,21 @@ export function register() {
       .addEventListener("submit", function (event) {
         event.preventDefault();
 
+        const avatarUrlInput = document.getElementById("registerAvatar");
+        const avatarUrl = avatarUrlInput.value.trim();
+
         const userData = {
           name: document.getElementById("registerName").value,
           email: document.getElementById("registerEmail").value,
           password: document.getElementById("registerPassword").value,
           bio: document.getElementById("registerBio").value,
-          avatar: {
-            url: document.getElementById("registerAvatar").value,
-          },
         };
+        
+        if (avatarUrl !== "") {
+          userData.avatar = {
+            url: avatarUrl,
+          };
+        }
 
         console.log("User Data:", userData);
 
