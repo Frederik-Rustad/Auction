@@ -12,61 +12,68 @@
 
 <body>
   <nav class="navbar navbar-auction">
-    <div class="container">  
+    <div class="container">
       <a class="navbar-brand" href="index.html">
         <img src="../assets/img/auction-hub.png" alt="Logo" height="50" class="d-inline-block align-top">
-      </a>  
+      </a>
       <div class="d-flex flex-row align-items-center ">
-            <button class="btn btn-primary btn-auction border-white text-white fw-bold text-stroke d-none" id="logout-btn">Logout</button>
-            <div class="profile-circle">
-              <a href="../profile/index.html">
-              <img src="../assets/img/auction-default-profile.jpg" alt="profile picture" class="profile-image">
-              <img src="../assets/img/Profile_frame_1_2.png" alt="Profile frame" class="profile-frame">
-            </a>
-      </div>  
+        <button class="btn btn-primary btn-auction border-white text-white fw-bold text-stroke d-none"
+          id="logout-btn">Logout</button>
+        <div class="profile-circle">
+          <a href="../profile/index.html">
+            <img src="../assets/img/auction-default-profile.jpg" alt="profile picture" class="profile-image">
+            <img src="../assets/img/Profile_frame_1_2.png" alt="Profile frame" class="profile-frame">
+          </a>
+        </div>
+      </div>
     </div>
-  </nav> 
+  </nav>
 
   <div class="container pt-4 ">
     <div class="col-md-12 bg-card text-center mb-4 rounded-4">
       <h1 class="text-center text-white fw-bold text-stroke">Browser our auctions📜</h1>
-      <p class=" text-center mx-4 fw-bold  ">"Welcome to Auction-Hub! Explore and bid on a diverse range of items in our active auctions. Discover unique treasures, exciting gadgets, and much more. Browse through our collection and find the perfect item to elevate your experience. Join the bidding excitement and secure your favorite items today!"</p>
-        <img src="../assets/img/android-chrome-192x192.png" alt="auction-hub mascot">
+      <p class=" text-center mx-4 fw-bold  ">"Welcome to Auction-Hub! Explore and bid on a diverse range of items in our
+        active auctions. Discover unique treasures, exciting gadgets, and much more. Browse through our collection and
+        find the perfect item to elevate your experience. Join the bidding excitement and secure your favorite items
+        today!"</p>
+      <img src="../assets/img/android-chrome-192x192.png" alt="auction-hub mascot">
     </div>
   </div>
 
-   <!-- post listing form -->
-   <div class="container bg-card text-black rounded mb-4 col-10">
+  <!-- post listing form -->
+  <div class="container bg-card text-black rounded mb-4 col-10">
     <h2>
-      <a data-bs-toggle="collapse" href="#postForm" role="button" aria-expanded="false" aria-controls="postForm" class="text-white text-decoration-none fw-bold text-stroke">
-        <h3>📜 Create an Auction +</h3>
+      <a data-bs-toggle="collapse" href="#postForm" role="button" aria-expanded="false" aria-controls="postForm"
+        class="text-white text-decoration-none fw-bold text-stroke">
+        📜 Create an Auction +
       </a>
     </h2>
     <div class="collapse" id="postForm">
-<!-- Create Auction Form -->
-<form id="createListingForm">
-  <div class="mb-3">
-    <label for="listingTitle" class="form-label">Title</label>
-    <input type="text" class="form-control" id="listingTitle" required>
-  </div>
-  <div class="mb-3">
-    <label for="listingDescription" class="form-label">Description</label>
-    <textarea class="form-control" id="listingDescription"></textarea>
-  </div>
-  <div class="mb-3">
-    <label for="listingTags" class="form-label">Tags</label>
-    <input type="text" class="form-control" id="listingTags">
-  </div>
-  <div class="mb-3">
-    <label for="listingMediaUrl" class="form-label">Media URL</label>
-    <input type="text" class="form-control" id="listingMediaUrl" required>
-  </div>  
-  <div class="mb-3">
-    <label for="listingEndsAt" class="form-label">Ends At</label>
-    <input type="datetime-local" class="form-control" id="listingEndsAt" required>
-  </div>
-  <button id="createListingBtn" type="button" class="btn btn-auction mb-2 fw-bold text-stroke text-white border-white">Create Listing</button>
-</form>
+      <!-- Create Auction Form -->
+      <form id="createListingForm">
+        <div class="mb-3">
+          <label for="listingTitle" class="form-label">Title</label>
+          <input type="text" class="form-control" id="listingTitle" required>
+        </div>
+        <div class="mb-3">
+          <label for="listingDescription" class="form-label">Description</label>
+          <textarea class="form-control" id="listingDescription"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="listingTags" class="form-label">Tags</label>
+          <input type="text" class="form-control" id="listingTags">
+        </div>
+        <div class="mb-3">
+          <label for="listingMediaUrl" class="form-label">Media URL</label>
+          <input type="text" class="form-control" id="listingMediaUrl" required>
+        </div>
+        <div class="mb-3">
+          <label for="listingEndsAt" class="form-label">Ends At</label>
+          <input type="datetime-local" class="form-control" id="listingEndsAt" required>
+        </div>
+        <button id="createListingBtn" type="button"
+          class="btn btn-auction mb-2 fw-bold text-stroke text-white border-white">Create Listing</button>
+      </form>
     </div>
   </div>
 
@@ -84,13 +91,15 @@
           </select>
         </div>
       </div>
-  
+
       <div class="col-md-6">
         <!-- Search bar and button -->
         <div class="input-group mb-3">
-         <!-- HTML -->
-<input type="text" id="searchInput" class="form-control fw-bold" placeholder="Search auctions" aria-label="Search auctions" aria-describedby="searchButton">
-<button class="btn btn-primary btn-auction text-white fw-bold text-stroke" type="button" id="searchButton">Search</button>
+          <!-- HTML -->
+          <input type="text" id="searchInput" class="form-control fw-bold" placeholder="Search auctions"
+            aria-label="Search auctions" aria-describedby="searchButton">
+          <button class="btn btn-primary btn-auction text-white fw-bold text-stroke" type="button"
+            id="searchButton">Search</button>
 
         </div>
       </div>
@@ -106,17 +115,23 @@
        -->
 
     </div>
-  </div>  
-  <script defer src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>  
-  <script src="../src/js/api/Listings/index.js" type="module" defer></script>  
-</body>
-<footer>
-  <div class="custom-shape-divider-bottom-1707191989">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
-        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
-        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
-    </svg>
   </div>
-</footer>
+  <script defer src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../src/js/api/Listings/index.js" type="module"></script>
+  <footer>
+    <div class="custom-shape-divider-bottom-1707191989">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+          d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+          opacity=".25" class="shape-fill"></path>
+        <path
+          d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+          opacity=".5" class="shape-fill"></path>
+        <path
+          d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+          class="shape-fill"></path>
+      </svg>
+    </div>
+  </footer>
+</body>
 </html>
