@@ -41,15 +41,17 @@ export function register() {
             alert("User registered successfully!");
             console.log("User profile:", data);
           })
-          .catch((error) => {
-            if (error.status === 400 && error.data && error.data.errors) {
-              const errorMessages = error.data.errors
-                .map((err) => err.message)
-                .join("\n");
-              alert(`Error registering user:\n${errorMessages}`);
-            } else {
-              console.error("Error registering user:", error);
-              alert(`Error registering user: ${error}.`);
+          .catch(error => {
+            let errorMessage = "An unexpected error occurred. Please try again.";
+  
+            if (error.body && error.body.errors && error.body.errors.length > 0) {
+              errorMessage = error.body.errors[0].message;
+            } else if (error.message) {
+              errorMessage = error.message;
+            }
+            const loginErrorDiv = document.getElementById('registerError');
+            if (loginErrorDiv) {
+              loginErrorDiv.textContent = errorMessage;            
             }
           });
       });
