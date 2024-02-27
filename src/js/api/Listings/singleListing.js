@@ -1,7 +1,7 @@
 import { BASE_URL, LISTINGS_ENDPOINT } from "../apibase.js";
 import { displayCredits } from "../../utils/displayCredits.js";
 import { userProfileAvatar } from "../../utils/displayProfileAvatar.js";
-import { logout } from "../auth/logout.js";
+import { logout, manageLoginButton } from "../auth/logout.js";
 import { API_KEY } from "../auth/apikey.js";
 import { bid } from "./bid.js";
 
@@ -140,3 +140,7 @@ export async function fetchSingleListings() {
 }
 
 fetchSingleListings();
+
+document.addEventListener("DOMContentLoaded", function () {
+  manageLoginButton();
+});
