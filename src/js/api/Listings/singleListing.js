@@ -13,7 +13,7 @@ logout();
 export async function fetchSingleListings() {
   try {
     const urlParams = new URLSearchParams(window.location.search);
-    const listingId = urlParams.get("listingId");
+    const listingId = urlParams.get("listingId");   
     console.log("Listing ID:", listingId);
 
     if (!listingId) {
@@ -50,24 +50,29 @@ export async function fetchSingleListings() {
       if (bidDenier === null) {
         const bidButton = document.getElementById("placeBid");
         bidButton.disabled = true;
-      }
 
-      if (auctionBidsElement) {
-        auctionBidsElement.innerHTML =
-          '<h3 class="text-white text-stroke bg-card rounded-top" >Bids</h3>';
-
-        if (data.data.bids && data.data.bids.length > 0) {
-          data.data.bids.forEach((bid) => {
-            const bidElement = document.createElement("p");
-            bidElement.textContent = `${bid.bidder.name} bid: ${bid.amount} Credits`;
-            auctionBidsElement.appendChild(bidElement);
-          });
-        } else {
-          const noBidsMessage = document.createElement("p");
-          noBidsMessage.textContent = "No bids have been placed yet.";
-          auctionBidsElement.appendChild(noBidsMessage);
+        if (auctionBidsElement) {
+          auctionBidsElement.innerHTML = `<h3 class="text-white text-stroke bg-card rounded-top" >Bids</h3>
+          <p class="text-black fw-bold">Login to view bids</p>`;
         }
-      }
+      } else {
+        if (auctionBidsElement) {
+          auctionBidsElement.innerHTML =
+            '<h3 class="text-white text-stroke bg-card rounded-top" >Bids</h3>';
+
+          if (data.data.bids && data.data.bids.length > 0) {
+            data.data.bids.forEach((bid) => {
+              const bidElement = document.createElement("p");
+              bidElement.textContent = `${bid.bidder.name} bid: ${bid.amount} Credits`;
+              auctionBidsElement.appendChild(bidElement);
+            });
+          } else {
+            const noBidsMessage = document.createElement("p");
+            noBidsMessage.textContent = "No bids have been placed yet.";
+            auctionBidsElement.appendChild(noBidsMessage);
+          }
+        }
+      }     
 
       if (auctionEndsAtElement) {
         const endsAtDate = new Date(data.data.endsAt);

@@ -51,13 +51,15 @@ export function bid() {
           return response.json().then((data) => Promise.reject(data));
         }
         return response.json();
+        
       })
       .then((data) => {
         alert("Bid placed successfully", data);
         console.log("Bid placed successfully", data);
         location.reload();
       })
-      .catch((error) => {
+
+     .catch((error) => {
         let errorMessage = "An unexpected error occurred. Please try again.";
         if (error.errors && error.errors.length > 0) {
           errorMessage = error.errors[0].message;
