@@ -2,9 +2,9 @@ import { BASE_URL, LISTINGS_ENDPOINT } from "../apibase.js";
 import { API_KEY } from "../auth/apikey.js";
 import { hideCreatePost } from "../../utils/hideCreatePost.js";
 
-export async function fetchListings() {
+export async function fetchListings(filterType = 'newest') {
   try {
-    const apiKey = API_KEY
+    const apiKey = API_KEY;
     const options = {
       method: "GET",
       headers: {
@@ -14,7 +14,22 @@ export async function fetchListings() {
     };
     const response = await fetch(BASE_URL + LISTINGS_ENDPOINT, options);
     if (response.ok) {
-      const data = await response.json();
+      const data = await response.json();        
+    
+      switch(filterType) {
+        case 'newest':
+          data.data.sort((a, b) => new Date(b.created) - new Date(a.created));
+          break;
+        case 'endingSoon':
+          data.data.sort((a, b) => new Date(a.created) - new Date(b.created));
+          break;
+        case 'mostBids':
+          data.data.sort((a, b) => b._count.bids - a._count.bids);
+          break;
+        case 'leastBids':
+          data.data.sort((a, b) => a._count.bids - b._count.bids);
+          break;
+      }
 
       const listingsContainer = document.getElementById(
         "listings-container-inner",
@@ -60,7 +75,6 @@ export async function fetchListings() {
         viewBidButton.dataset.listingId = listing.id;
 
         cardBody.appendChild(title);
-
         cardBody.appendChild(endDate);
         cardBody.appendChild(viewBidButton);
         card.appendChild(img);
@@ -83,5 +97,18 @@ export async function fetchListings() {
     console.error("Fetch error:", error.message);
   }
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  const filterSelect = document.getElementById('auctionFilter');
+  
+  filterSelect.addEventListener('change', () => {
+    const selectedFilter = filterSelect.value;
+    
+    fetchListings(selectedFilter);
+  });
+  
+  fetchListings();
+});
+
 
 hideCreatePost();
