@@ -1,5 +1,6 @@
 import { BASE_URL, LISTINGS_ENDPOINT } from "../apibase.js";
 import { API_KEY } from "../auth/apikey.js";
+import { hideCreatePost } from "../../utils/hideCreatePost.js";
 
 export async function fetchListings() {
   try {
@@ -81,4 +82,6 @@ export async function fetchListings() {
   } catch (error) {
     console.error("Fetch error:", error.message);
   }
-}
+};
+
+hideCreatePost();
