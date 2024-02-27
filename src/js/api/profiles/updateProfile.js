@@ -1,4 +1,5 @@
 import { BASE_URL, PROFILE_ENDPOINT } from "../apibase.js";
+import { API_KEY } from "../auth/apikey.js";
 
 console.log("update avatar loaded");
 
@@ -18,7 +19,7 @@ export async function updateAvatar() {
 
         const NAME = localStorage.getItem("userName");
         const accessToken = localStorage.getItem("accessToken");
-        const apiKey = localStorage.getItem("api_key");
+        const apiKey = API_KEY;
 
         fetch(BASE_URL + PROFILE_ENDPOINT + "/" + NAME, {
           method: "PUT",
