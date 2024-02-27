@@ -45,7 +45,7 @@ export async function displayUserInfo() {
       if (userBio) {
         userBio.innerText = data.data.bio;
       }
-      if (data.data.bio === null) {
+      if (data.data.bio === null || data.data.bio === "") {
         userBio.innerText = `Silent bidder, letting the items and bid's speak louder than words. also i didn't write a bio.`;
       }
     } else {
