@@ -57,15 +57,18 @@ export function bid() {
         console.log("Bid placed successfully", data);
         location.reload();
       })
-     .catch((error) => {
-  if (error.errors && error.errors.length > 0) {
-    const errorMessage = error.errors[0].message;
-    console.error("Error placing bid:", errorMessage);
-    alert(errorMessage);
-  } else {
-    console.error("Error placing bid:", error.message);
-    alert(error.message);
-  }
-});
+      .catch((error) => {
+        let errorMessage = "An unexpected error occurred. Please try again.";
+        if (error.errors && error.errors.length > 0) {
+          errorMessage = error.errors[0].message;
+          const bidError = document.getElementById("bidError");
+          if (bidError) {
+            bidError.textContent = errorMessage;
+          }
+        } else {
+          console.error("Error placing bid:", error.message);
+          alert(error.message);
+        }
+      });
   }
 }
