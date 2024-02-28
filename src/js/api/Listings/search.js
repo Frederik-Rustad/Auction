@@ -20,7 +20,7 @@ export function searchForListing() {
       if (query.length > 0) {
         searchListings(query);
       } else {
-        console.log("Please enter a search query.");
+        location.reload();
       }
     }
 
