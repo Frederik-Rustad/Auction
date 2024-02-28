@@ -109,12 +109,17 @@ export async function fetchSingleListings() {
           }
 
           if (auctionItemInfoElement) {
-            const image = data.data.media[0].url;
-            const img = document.createElement("img");
-            img.src = image;
-            img.classList.add("rounded-4", "auction-item", "mt-4", "img-fluid");
-            img.alt = "Auction Item Image";
-            auctionItemInfoElement.appendChild(img);
+            const mediaArray = data.data.media;
+
+            if (auctionItemInfoElement && mediaArray && mediaArray.length > 0) {
+              mediaArray.forEach((media, index) => {
+                const img = document.createElement("img");
+                img.src = media.url;
+                img.classList.add("rounded-4", "auction-item", "mt-4", "img-fluid");
+                img.alt = `${data.data.title} - Image ${index + 1}`;
+                auctionItemInfoElement.appendChild(img);
+              });
+            }
 
             const seller = data.data.seller.name;
             const sellerElement = document.createElement("h3");

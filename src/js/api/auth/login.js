@@ -44,7 +44,7 @@ export function login() {
           }
           const loginErrorDiv = document.getElementById('loginError');
           if (loginErrorDiv) {
-            loginErrorDiv.textContent = errorMessage;            
+            loginErrorDiv.textContent = errorMessage;
           }
         });
     });

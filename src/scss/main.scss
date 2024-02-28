@@ -1,56 +1,71 @@
 @import "variables.scss";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-html{
+html {
   height: 100%;
 }
-body{
+
+body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
 }
+
 footer {
-  margin-top: auto;  
-  }
+  margin-top: auto;
+}
+
 h2 {
   color: $heading-color;
   font-weight: 700;
 }
+
 h3 {
   color: white;
   font-weight: 700;
 }
-p, a {
+
+p,
+a {
   font-weight: 600;
 }
+
 .logo {
   max-width: 400px;
   height: auto;
 }
-.btn-login, .btn-auction, .bg-card {
+
+.btn-login,
+.btn-auction,
+.bg-card {
   background-color: $auction-primary-color;
 }
+
 .btn-secondary {
   background-color: $beta;
 }
-.modal-header, .navbar-auction {
+
+.modal-header,
+.navbar-auction {
   background-color: $primary;
 }
+
 .form-label {
   color: $heading-color;
 }
+
 .profile-circle {
   display: flex;
   max-width: 50px;
   max-height: 50px;
   border-radius: 50%;
-  position: relative;  
+  position: relative;
   margin-left: 10px;
 }
 
 .profile-image {
   width: 100%;
-  height: auto; 
+  height: auto;
   border-radius: 50%;
   z-index: 1;
 }
@@ -61,11 +76,12 @@ p, a {
   top: 44%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2; 
+  z-index: 2;
 }
 
-.edit-avatar { 
- max-width: 60px;
+.edit-avatar {
+  max-width: 60px;
+  cursor: pointer;
 }
 
 .text-stroke {
@@ -73,7 +89,7 @@ p, a {
 }
 
 .custom-shape-divider-bottom-1707191989 {
-  position: absolute; 
+  position: absolute;
   left: 0;
   width: 100%;
   overflow: hidden;
@@ -95,6 +111,7 @@ p, a {
 .border-grey {
   border: solid 5px black;
 }
+
 .bid-img {
   display: flex;
   justify-self: end;
@@ -112,22 +129,13 @@ p, a {
   width: 350px;
   height: 350px;
   border-radius: 50%;
-  position: relative;  
+  position: relative;
   margin-left: 10px;
 }
 
 #userAvatar {
-  max-width: 80%;
-  height: auto; 
-  z-index: 1;  
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
-}
-
-#userAvatarFrame {
-  width: 100%;
-  position: absolute;
-  top: 44%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2; 
-}
+  box-shadow: 0 0 0 15px #005467; 
+  }
