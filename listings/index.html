@@ -21,12 +21,12 @@
           id="logout-btn">Logout</button>
           <button class="btn btn-primary btn-auction border-white text-white fw-bold text-stroke d-none"
           id="login-btn">Login</button>
-        <div class="profile-circle">
           <a href="../profile/index.html">
+        <div class="profile-circle">
             <img src="../assets/img/auction-default-profile.jpg" alt="profile picture" class="profile-image">
             <img src="../assets/img/Profile_frame_1_2.png" alt="Profile frame" class="profile-frame">
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
     </div>
   </nav>
@@ -54,7 +54,7 @@
       <!-- Create Auction Form -->
       <form id="createListingForm">
         <div class="mb-3">
-          <label for="listingTitle" class="form-label text-white fw-bold text-stroke">Title</label>
+          <label for="listingTitle" class="form-label text-white fw-bold text-stroke">Title*</label>
           <input type="text" class="form-control" id="listingTitle" required>
         </div>
         <div class="mb-3">
@@ -66,13 +66,14 @@
           <input type="text" class="form-control" id="listingTags">
         </div>
         <div class="mb-3">
-          <label for="listingMediaUrl" class="form-label text-white fw-bold text-stroke">Media URL</label>
-          <input type="text" class="form-control" id="listingMediaUrl" required>
+          <label for="listingMediaUrls" class="form-label text-white fw-bold text-stroke">Media URLs</label>
+          <textarea class="form-control" id="listingMediaUrls" rows="3"></textarea>
         </div>
         <div class="mb-3">
-          <label for="listingEndsAt" class="form-label text-white fw-bold text-stroke">Ends At</label>
+          <label for="listingEndsAt" class="form-label text-white fw-bold text-stroke">Ends At*</label>
           <input type="datetime-local" class="form-control" id="listingEndsAt" required>
         </div>
+      <div class="text-danger fw-bold text-stroke" id="createListingErrors"></div>
         <button id="createListingBtn" type="button"
           class="btn btn-auction mb-2 fw-bold text-stroke text-white border-white">Create Listing</button>
       </form>

@@ -6,20 +6,20 @@ export async function createListing() {
   const titleInput = document.getElementById("listingTitle");
   const descriptionInput = document.getElementById("listingDescription");
   const tagsInput = document.getElementById("listingTags");
-  const mediaUrlInput = document.getElementById("listingMediaUrl");
+  const mediaUrlsInput = document.getElementById("listingMediaUrls");
   const endsAtInput = document.getElementById("listingEndsAt");
 
   const title = titleInput.value;
   const description = descriptionInput.value;
   const tags = tagsInput.value.split(",").map((tag) => tag.trim());
-  const mediaUrl = mediaUrlInput.value;
+  const mediaUrls = mediaUrlsInput.value.split('\n').map(url => ({ url: url.trim(), alt: "Auction item image" }));
   const endsAt = endsAtInput.value;
 
   const listingData = {
     title: title,
     description: description,
     tags: tags,
-    media: [{ url: mediaUrl, alt: "Auction item image" }],
+    media: mediaUrls,
     endsAt: endsAt,
   };
 
@@ -39,7 +39,7 @@ export async function createListing() {
   })
     .then((response) => {
       if (response.ok) {
-        return response.json();
+        return response.json();        
       } else {
         throw new Error(`Failed to create listing. Status: ${response.status}`);
       }
@@ -49,11 +49,19 @@ export async function createListing() {
       titleInput.value = "";
       descriptionInput.value = "";
       tagsInput.value = "";
-      mediaUrlInput.value = "";
+      mediaUrlsInput.value = "";
       endsAtInput.value = "";
+      location.reload();
     })
-    .catch((error) => {
-      console.error("Error creating listing:", error.message);
-      // put the error message in a div on the page, later.
+    .catch(error => {
+      let errorMessage = "Unexpected Error. Please fill out the required feilds and try again.";
+    
+      
+      const createListingErrorsDiv = document.getElementById('createListingErrors');
+      if (createListingErrorsDiv) {
+        createListingErrorsDiv.innerHTML = errorMessage;
+      }
     });
+    
+
 }
