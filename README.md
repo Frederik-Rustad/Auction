@@ -11,7 +11,7 @@
     Fully responsive
     Noroff Auction API V2
     Login system
-    Create/Read
+    Create/Read/Delete
     Manage your listings
     View listings also when not logged in
     Favorites system

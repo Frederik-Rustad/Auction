@@ -4,6 +4,7 @@ import { userProfileAvatar } from "../../utils/displayProfileAvatar.js";
 import { logout, manageLoginButton } from "../auth/logout.js";
 import { API_KEY } from "../auth/apikey.js";
 import { bid } from "./bid.js";
+import { deleteListing } from "./delete.js";
 
 bid();
 displayCredits();
@@ -43,6 +44,12 @@ export async function fetchSingleListings() {
         "auctionBidsContainer",
       );
       const bidDenier = localStorage.getItem("accessToken");
+      const username = localStorage.getItem("userName");     
+
+      if (username === data.data.seller.name) {
+        const deleteButton = document.getElementById("deleteListing");
+        deleteButton.classList.remove("d-none"); 
+      }
 
       if (bidDenier === null) {
         const bidButton = document.getElementById("placeBid");
@@ -151,3 +158,4 @@ fetchSingleListings();
 document.addEventListener("DOMContentLoaded", function () {
   manageLoginButton();
 });
+document.getElementById("deleteListing").addEventListener("click", deleteListing);
