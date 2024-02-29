@@ -1,4 +1,30 @@
 # Auction-Hub
+
+![image](assets/img/head1.PNG)
+
+## Description
+
+[Auction-Hub](https://frederik-rustad.github.io/Auction-Hub/index.html) is an online auction marketplace where users can add items to be bid on and bid on items other users have put up for auction. When a new user joins the website, they are given 1000 credits to use on the site. They can get credits by selling items and use credit by buying items. Non-registered users can search through the listings, but only registered users can view and make bids on listings.
+
+### The main features are:
+
+    Fully responsive
+    Noroff Auction API V2
+    Login system
+    Create/Read
+    Manage your listings
+    View listings also when not logged in
+    Favorites system
+
+### Built With:
+
+    Vanilla JavaScript
+    Bootstrap
+    Noroff Auction API V2
+    
+
+
+# Auction-Hub
 a Auction website where users can add items to be bid on and bid on items other users have put up for auction.
 
 ## Getting Started
