@@ -16,9 +16,7 @@ export function bid() {
 
       if (bidAmount) {
         submitBid(bidAmount);
-      } else {
-        console.error("Bid amount is required");
-      }
+      } 
     });
   });
 
@@ -31,8 +29,7 @@ export function bid() {
     const apiKey = API_KEY;
     const urlParams = new URLSearchParams(window.location.search);
     const listingId = urlParams.get("listingId");
-    if (!listingId) {
-      console.error("Listing ID is required");
+    if (!listingId) {      
       return;
     }
     const url = `${BASE_URL}${LISTINGS_ENDPOINT}/${listingId}${BIDS_ENDPOINT}`;
@@ -53,9 +50,7 @@ export function bid() {
         return response.json();
         
       })
-      .then((data) => {
-        alert("Bid placed successfully", data);
-        console.log("Bid placed successfully", data);
+      .then((data) => {        
         location.reload();
       })
 
@@ -67,9 +62,8 @@ export function bid() {
           if (bidError) {
             bidError.textContent = errorMessage;
           }
-        } else {
-          console.error("Error placing bid:", error.message);
-          alert(error.message);
+        } else {          
+          alert("Error placing bid:", error.message);
         }
       });
   }

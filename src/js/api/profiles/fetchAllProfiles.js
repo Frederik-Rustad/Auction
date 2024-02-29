@@ -23,13 +23,12 @@ export async function fetchProfiles() {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Profiles - Page", page, ":", data.data);
 
         if (!data.meta.isLastPage) {
           await fetchPage(page + 1);
         }
       } else {
-        console.error(
+        alert(
           "Error fetching profiles - Page",
           page,
           ":",
@@ -41,6 +40,6 @@ export async function fetchProfiles() {
 
     await fetchPage(currentPage);
   } catch (error) {
-    console.error("Fetch error:", error.message);
+    alert("Fetch error:", error.message);
   }
 }

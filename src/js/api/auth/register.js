@@ -23,8 +23,6 @@ export function register() {
           };
         }
 
-        console.log("User Data:", userData);
-
         fetch(BASE_URL + REGISTER_ENDPOINT, {
           method: "POST",
           body: JSON.stringify(userData),
@@ -45,7 +43,6 @@ export function register() {
           })
           .then((data) => {
             alert("User registered successfully!");
-            console.log("User profile:", data);
           })
           .catch(error => {
             let errorMessage = "An unexpected error occurred. Please try again.";

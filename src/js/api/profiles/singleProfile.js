@@ -1,8 +1,6 @@
 import { BASE_URL, PROFILE_ENDPOINT } from "../apibase.js";
 import { API_KEY } from "../auth/apikey.js";
 
-console.log("singleProfile.js is running");
-
 export async function displayUserInfo() {
   try {
     const accessToken = localStorage.getItem("accessToken");
@@ -29,12 +27,11 @@ export async function displayUserInfo() {
 
     if (response.ok) {
       const data = await response.json();
-      console.log("Single User Profile:", data.data);
       const profileUsername = document.getElementById("profileUsername");
       if (profileUsername) {
         profileUsername.textContent = data.data.name;
       }
-      console.log("avatar url", data.data.avatar.url);
+    
       const profileAvatar = document.getElementById("userAvatar");
       if (profileAvatar) {
         profileAvatar.src = data.data.avatar.url;
@@ -49,13 +46,13 @@ export async function displayUserInfo() {
         userBio.innerText = `Silent bidder, letting the items and bid's speak louder than words. also i didn't write a bio.`;
       }
     } else {
-      console.error(
+      alert(
         "Error fetching user profile:",
         response.status,
         response.statusText,
       );
     }
   } catch (error) {
-    console.error("Fetch error:", error.message);
+    alert("Fetch error:", error.message);
   }
 }

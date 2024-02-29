@@ -1,8 +1,6 @@
 import { BASE_URL, PROFILE_ENDPOINT } from "../apibase.js";
 import { API_KEY } from "../auth/apikey.js";
 
-console.log("update avatar loaded");
-
 export async function updateAvatar() {
   document.addEventListener("DOMContentLoaded", function () {
     document
@@ -62,7 +60,6 @@ export async function updateAvatar() {
                 .join("\n");
               alert(`Error Updating Avatar :\n${errorMessages}`);
             } else {
-              console.error("Error Updating Avatar:", error);
               alert(`Error Updating Avatar: ${error}.`);
             }
           });

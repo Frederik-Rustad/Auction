@@ -20,12 +20,11 @@ export async function fetchApiKey() {
 
     if (response.ok) {
       const data = await response.json();
-      console.log("API Key:", data);
       localStorage.setItem(api_key, data.data.key);
     } else {
-      console.error("Error:", response.status, response.statusText);
+      alert("Error:", response.status, response.statusText);
     }
   } catch (error) {
-    console.error("Fetch error:", error.message);
+    alert("Fetch error:", error.message);
   }
 }
