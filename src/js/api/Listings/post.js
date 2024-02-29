@@ -1,22 +1,23 @@
 import { API_KEY } from "../auth/apikey.js";
 
+
 export async function createListing() {
   const titleInput = document.getElementById("listingTitle");
   const descriptionInput = document.getElementById("listingDescription");
-  const tagsInput = document.getElementById("listingTags");
+
   const mediaUrlsInput = document.getElementById("listingMediaUrls");
   const endsAtInput = document.getElementById("listingEndsAt");
 
   const title = titleInput.value;
   const description = descriptionInput.value;
-  const tags = tagsInput.value.split(",").map((tag) => tag.trim());
+
   const mediaUrls = mediaUrlsInput.value.split('\n').map(url => ({ url: url.trim(), alt: "Auction item image" }));
   const endsAt = endsAtInput.value;
 
   const listingData = {
     title: title,
     description: description,
-    tags: tags,
+   
     media: mediaUrls,
     endsAt: endsAt,
   };
@@ -43,9 +44,10 @@ export async function createListing() {
       }
     })
     .then((data) => {
+      console.log("Listing created successfully:", data);
       titleInput.value = "";
       descriptionInput.value = "";
-      tagsInput.value = "";
+     
       mediaUrlsInput.value = "";
       endsAtInput.value = "";
       location.reload();

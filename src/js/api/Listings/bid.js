@@ -29,7 +29,8 @@ export function bid() {
     const apiKey = API_KEY;
     const urlParams = new URLSearchParams(window.location.search);
     const listingId = urlParams.get("listingId");
-    if (!listingId) {      
+    if (!listingId) {
+      
       return;
     }
     const url = `${BASE_URL}${LISTINGS_ENDPOINT}/${listingId}${BIDS_ENDPOINT}`;
@@ -51,7 +52,7 @@ export function bid() {
         
       })
       .then((data) => {        
-        location.reload();
+        location.reload();        
       })
 
      .catch((error) => {
