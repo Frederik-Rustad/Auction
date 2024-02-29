@@ -33,14 +33,13 @@ Should you want to deploy it yourself, follow the below steps.
 
 # Installing
 
-### First off, clone the repo.
+## First off, clone the repo.
 
     Clone the repo:
 
-[clone repo Frederik-Rustad/Auction-Hub](https://github.com/Frederik-Rustad/Auction-Hub.git)
+[Frederik-Rustad/Auction-Hub](https://github.com/Frederik-Rustad/Auction-Hub.git)
 
     Upload and install to your preferred hosting provider.
-
 
 
 ## Use npm commands
