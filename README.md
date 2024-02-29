@@ -35,7 +35,7 @@ Should you want to deploy it yourself, follow the below steps.
 
 ## First off, clone the repo.
 
-    Clone the repo: [Frederik-Rustad/Auction-Hub](https://github.com/Frederik-Rustad/Auction-Hub.git)
+    Clone the repo:  https://github.com/Frederik-Rustad/Auction-Hub.git
 
     Upload and install to your preferred hosting provider.
 
