@@ -1,8 +1,5 @@
 import { BASE_URL, PROFILE_ENDPOINT } from "../api/apibase.js";
 
-
-console.log("display credits loaded");
-
 export async function displayCredits() {
   try {
     const accessToken = localStorage.getItem("accessToken");
@@ -29,7 +26,6 @@ export async function displayCredits() {
 
     if (response.ok) {
       const data = await response.json();
-      console.log("User Profile:", data.data);
       const profileData = data.data;
 
       if (profileData && profileData.credits !== undefined) {
@@ -39,13 +35,13 @@ export async function displayCredits() {
         }
       }
     } else {
-      console.error(
+      alert(
         "Error fetching user profile:",
         response.status,
         response.statusText,
       );
     }
   } catch (error) {
-    console.error("Fetch error:", error.message);
+    alert("Fetch error:", error.message);
   }
 }

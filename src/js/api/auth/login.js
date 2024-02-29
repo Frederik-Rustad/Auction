@@ -10,8 +10,6 @@ export function login() {
         password: document.getElementById("loginPassword").value,
       };
 
-      console.log("Login Data:", loginData);
-
       fetch(BASE_URL + LOGIN_ENDPOINT, {
         method: "POST",
         headers: {

@@ -1,5 +1,3 @@
-console.log("api/index.js loaded");
-
 const registerForm = document.querySelector("#registerForm");
 
 registerForm.addEventListener("submit", function (event) {
@@ -8,5 +6,4 @@ registerForm.addEventListener("submit", function (event) {
 });
 
 function registerUser() {
-  console.log("registerd User");
-}
+  }

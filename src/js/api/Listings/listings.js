@@ -34,9 +34,7 @@ export async function fetchListings(filterType = 'newest') {
       const listingsContainer = document.getElementById(
         "listings-container-inner",
       );
-
-      console.log(data);
-
+      
       listingsContainer.innerHTML = "";
 
       data.data.forEach((listing) => {
@@ -91,10 +89,10 @@ export async function fetchListings(filterType = 'newest') {
         }
       });
     } else {
-      console.error("Error:", response.status, response.statusText);
+      alert("Error:", response.status, response.statusText);
     }
   } catch (error) {
-    console.error("Fetch error:", error.message);
+    alert("Fetch error:", error.message);
   }
 };
 

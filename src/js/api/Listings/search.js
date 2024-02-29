@@ -20,7 +20,7 @@ export function searchForListing() {
       if (query.length > 0) {
         searchListings(query);
       } else {
-        console.log("Please enter a search query.");
+        location.reload();
       }
     }
 
@@ -44,12 +44,11 @@ export function searchForListing() {
               );
           }
         })
-        .then((data) => {
-          console.log("Search Results:", data);
+        .then((data) => {          
           updateListingsContainer(data.data);
         })
         .catch((error) => {
-          console.error("Error searching listings:", error);
+          alert("Error searching listings:", error);
         });
     }
 

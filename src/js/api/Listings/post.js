@@ -1,7 +1,5 @@
 import { API_KEY } from "../auth/apikey.js";
 
-console.log("post.js loaded");
-
 export async function createListing() {
   const titleInput = document.getElementById("listingTitle");
   const descriptionInput = document.getElementById("listingDescription");
@@ -45,7 +43,6 @@ export async function createListing() {
       }
     })
     .then((data) => {
-      console.log("Listing created successfully:", data);
       titleInput.value = "";
       descriptionInput.value = "";
       tagsInput.value = "";

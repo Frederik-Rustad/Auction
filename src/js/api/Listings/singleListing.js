@@ -14,10 +14,8 @@ export async function fetchSingleListings() {
   try {
     const urlParams = new URLSearchParams(window.location.search);
     const listingId = urlParams.get("listingId");   
-    console.log("Listing ID:", listingId);
-
-    if (!listingId) {
-      console.error("Listing ID not found in the query parameter");
+   
+    if (!listingId) {     
       return;
     }
 
@@ -37,7 +35,6 @@ export async function fetchSingleListings() {
 
     if (response.ok) {
       const data = await response.json();
-      console.log("Single Listing:", data.data);
 
       const auctionTitleElement = document.getElementById("auctionTitle");
       const auctionItemInfoElement = document.getElementById("auctionItemInfo");
@@ -142,10 +139,10 @@ export async function fetchSingleListings() {
         }
       }
     } else {
-      console.error("Error:", response.status, response.statusText);
+      alert("Error:", response.status, response.statusText);
     }
   } catch (error) {
-    console.error("Fetch error:", error.message);
+    alert("Fetch error:", error.message);
   }
 }
 

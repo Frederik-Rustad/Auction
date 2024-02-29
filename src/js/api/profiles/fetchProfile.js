@@ -27,16 +27,15 @@ export async function fetchUserProfile() {
 
     if (response.ok) {
       const data = await response.json();
-      console.log("User Profile:", data.data);
       const profileData = data.data;
     } else {
-      console.error(
+      alert(
         "Error fetching user profile:",
         response.status,
         response.statusText,
       );
     }
   } catch (error) {
-    console.error("Fetch error:", error.message);
+    alert("Fetch error:", error.message);
   }
 }
