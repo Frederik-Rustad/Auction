@@ -24,6 +24,8 @@ export async function displayUserInfo() {
       `${BASE_URL}${PROFILE_ENDPOINT}/${userName}`,
       options,
     );
+  
+
 
     if (response.ok) {
       const data = await response.json();
@@ -31,11 +33,20 @@ export async function displayUserInfo() {
       if (profileUsername) {
         profileUsername.textContent = data.data.name;
       }
-    
+      
       const profileAvatar = document.getElementById("userAvatar");
       if (profileAvatar) {
         profileAvatar.src = data.data.avatar.url;
         userAvatar.alt = `${data.data.name}'s Avatar`;
+      }
+
+      const activeAuctions = document.getElementById("activeAuctions");
+      if (activeAuctions) {
+        activeAuctions.innerText = `Active Auctions: ${data.data._count.listings}`;
+      }
+      const winsAuctions = document.getElementById("winsAuctions");
+      if (activeAuctions) {
+        winsAuctions.innerText = `Auctions Won: ${data.data._count.wins}`;
       }
 
       const userBio = document.getElementById("userBio");
