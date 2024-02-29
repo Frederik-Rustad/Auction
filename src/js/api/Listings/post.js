@@ -1,6 +1,5 @@
 import { API_KEY } from "../auth/apikey.js";
 
-console.log("post.js loaded");
 
 export async function createListing() {
   const titleInput = document.getElementById("listingTitle");
