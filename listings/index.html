@@ -61,19 +61,23 @@
           <label for="listingDescription" class="form-label text-white fw-bold text-stroke">Description</label>
           <textarea class="form-control" id="listingDescription"></textarea>
         </div>
-        <!-- <div class="mb-3">
-          <label for="listingTags" class="form-label text-white fw-bold text-stroke">Tags</label>
-          <input type="text" class="form-control" id="listingTags">
-        </div> -->
         <div class="mb-3">
-          <label for="listingMediaUrls" class="form-label text-white fw-bold text-stroke">Media URLs (one per line)</label>
-          <textarea class="form-control" id="listingMediaUrls" rows="3"></textarea>
+          <label class="form-label text-white fw-bold text-stroke">Media URLs</label>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Media URL 1" id="mediaUrl1">
+          </div>
+          <div class="input-group">
+            <input type="text" class="form-control mt-2" placeholder="Media URL 2" id="mediaUrl2">
+          </div>
+          <div class="input-group">
+            <input type="text" class="form-control mt-2" placeholder="Media URL 3" id="mediaUrl3">
+          </div>
         </div>
         <div class="mb-3">
           <label for="listingEndsAt" class="form-label text-white fw-bold text-stroke">Ends At*</label>
           <input type="datetime-local" class="form-control" id="listingEndsAt" required>
         </div>
-      <div class="text-danger fw-bold text-stroke" id="createListingErrors"></div>
+        <div class="text-danger fw-bold text-stroke" id="createListingErrors"></div>
         <button id="createListingBtn" type="button"
           class="btn btn-auction mb-2 fw-bold text-stroke text-white border-white">Create Listing</button>
       </form>
