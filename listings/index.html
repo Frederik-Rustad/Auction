@@ -64,7 +64,7 @@
         <div class="mb-3">
           <label class="form-label text-white fw-bold text-stroke">Media URLs</label>
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Media URL 1" id="mediaUrl1">
+            <input type="text" class="form-control" placeholder="Media URL 1 (Main Image)" id="mediaUrl1">
           </div>
           <div class="input-group">
             <input type="text" class="form-control mt-2" placeholder="Media URL 2" id="mediaUrl2">
@@ -107,11 +107,15 @@
             aria-label="Search auctions" aria-describedby="searchButton">
           <button class="btn btn-primary btn-auction text-white fw-bold text-stroke" type="button"
             id="searchButton">Search</button>
-
         </div>
       </div>
-    </div>
-  </div>
+
+      <div class="form-check form-switch ms-4">
+        <input class="form-check-input" type="checkbox" role="switch" id="showClosedAuctions" checked>
+        <label class="form-check-label fw-bold" for="showClosedAuctions">Show Closed Auctions</label>
+      </div>      
+    
+  </div>  
 
   <div class="container mb-4" id="listings-container-outer">
 

@@ -2,7 +2,7 @@ import { BASE_URL, LISTINGS_ENDPOINT } from "../apibase.js";
 import { API_KEY } from "../auth/apikey.js";
 import { hideCreatePost } from "../../utils/hideCreatePost.js";
 
-export async function fetchListings(filterType = 'newest') {
+export async function fetchListings(filterType = 'newest', showClosedAuctions = true) {
   try {
     const apiKey = API_KEY;
     const options = {
@@ -82,6 +82,11 @@ export async function fetchListings(filterType = 'newest') {
 
         const endAuctionDate = new Date(listing.endsAt);
         const currentDate = new Date();
+        
+        if (endAuctionDate < currentDate && !showClosedAuctions) {
+          card.classList.add("d-none");
+          return;
+        }
 
         if (endAuctionDate < currentDate) {
           viewBidButton.textContent = "Auction Closed";
@@ -98,15 +103,23 @@ export async function fetchListings(filterType = 'newest') {
 
 document.addEventListener('DOMContentLoaded', () => {
   const filterSelect = document.getElementById('auctionFilter');
-  
+  const showClosedCheckbox = document.getElementById('showClosedAuctions');
+
   filterSelect.addEventListener('change', () => {
     const selectedFilter = filterSelect.value;
-    
-    fetchListings(selectedFilter);
+    const showClosedAuctions = showClosedCheckbox.checked;
+
+    fetchListings(selectedFilter, showClosedAuctions);
   });
-  
+
+  showClosedCheckbox.addEventListener('change', () => {
+    const selectedFilter = filterSelect.value;
+    const showClosedAuctions = showClosedCheckbox.checked;
+
+    fetchListings(selectedFilter, showClosedAuctions);
+  });
+
   fetchListings();
 });
-
 
 hideCreatePost();
