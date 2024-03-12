@@ -37,8 +37,7 @@ export async function fetchListings(filterType = 'newest', showClosedAuctions = 
 
       listingsContainer.innerHTML = "";
 
-      data.data.forEach((listing) => {
-        console.log(listing);
+      data.data.forEach((listing) => {       
         const card = document.createElement("div");
         card.classList.add("card");
         card.style.width = "18rem";
