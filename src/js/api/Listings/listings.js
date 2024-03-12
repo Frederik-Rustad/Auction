@@ -14,9 +14,9 @@ export async function fetchListings(filterType = 'newest', showClosedAuctions = 
     };
     const response = await fetch(BASE_URL + LISTINGS_ENDPOINT, options);
     if (response.ok) {
-      const data = await response.json();        
-    
-      switch(filterType) {
+      const data = await response.json();
+
+      switch (filterType) {
         case 'newest':
           data.data.sort((a, b) => new Date(b.created) - new Date(a.created));
           break;
@@ -34,18 +34,24 @@ export async function fetchListings(filterType = 'newest', showClosedAuctions = 
       const listingsContainer = document.getElementById(
         "listings-container-inner",
       );
-      
+
       listingsContainer.innerHTML = "";
 
       data.data.forEach((listing) => {
+        console.log(listing);
         const card = document.createElement("div");
         card.classList.add("card");
         card.style.width = "18rem";
 
         const img = document.createElement("img");
-        img.src = listing.media[0].url;
         img.classList.add("card-img-top", "card-img", "mt-2");
         img.alt = listing.title;
+        
+        if (listing.media && listing.media.length > 0 && listing.media[0].url) {
+          img.src = listing.media[0].url;
+        } else {
+          img.src = "../assets/img/no_listing_image.PNG";
+        }
 
         const cardBody = document.createElement("div");
         cardBody.classList.add("card-body");
@@ -82,7 +88,7 @@ export async function fetchListings(filterType = 'newest', showClosedAuctions = 
 
         const endAuctionDate = new Date(listing.endsAt);
         const currentDate = new Date();
-        
+
         if (endAuctionDate < currentDate && !showClosedAuctions) {
           card.classList.add("d-none");
           return;
@@ -97,7 +103,7 @@ export async function fetchListings(filterType = 'newest', showClosedAuctions = 
       alert("Error:", response.status, response.statusText);
     }
   } catch (error) {
-    alert("Fetch error:", error.message);
+    alert("Fetch error:", error.message);  
   }
 };
 
