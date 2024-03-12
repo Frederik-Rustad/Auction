@@ -123,6 +123,12 @@ export async function fetchSingleListings() {
                 img.alt = `${data.data.title} - Image ${index + 1}`;
                 auctionItemInfoElement.appendChild(img);
               });
+            } else {
+              const img = document.createElement("img");
+              img.src = "../assets/img/no_listing_image.PNG";
+              img.classList.add("rounded-4", "auction-item", "mt-4", "img-fluid");
+              img.alt = "Auction Item Image";
+              auctionItemInfoElement.appendChild(img);
             }
 
             const seller = data.data.seller.name;
