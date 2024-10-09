@@ -1,6 +1,6 @@
 import { BASE_URL, API_KEY_ENDPOINT } from "../apibase.js";
 
-export const API_KEY = "8013f1a8-b8b3-4410-a979-0307c32b7ddd"
+export const API_KEY = "f6c82c5b-de54-4cf6-85b1-4511a2e4bd13"
 
 export async function fetchApiKey() {
   try {
